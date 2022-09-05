@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <help_text>Space for diagram notes
+</help_text>
+  <zoom_level>13</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>182</y>
+      <w>273</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>FEDERACION_COLOMBIANA
+--
+&lt;&lt;PK&gt;&gt;numero_identificacion
+personeria_juridica
+fecha_creacion
+nombre_representate_legal
+telefono_contacto
+correo_electronico
+nombre_presidente
+nombre_vicepresidente
+nombre_tesorero
+nombre_vocal [0..1]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>91</x>
+      <y>455</y>
+      <w>273</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>LIGA
+--
+&lt;&lt;PK&gt;&gt;personeria_jurididca
+fecha_afiliacion
+modalidad_escuela
+ciudad_sede
+nombre_director
+grado_directo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1040</x>
+      <y>468</y>
+      <w>273</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>COLEGIO_ARBITRO
+--
+&lt;&lt;PK&gt;&gt;resolucion_funcionamiento
+fecha_creacion
+nombre_director_ejecutivo
+numero_celular_director
+grado_director[0..1]
+ciudad_sede
+manejo_comite_etica [0..1]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>403</x>
+      <y>182</y>
+      <w>273</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>PARTICIPANTE
+--
+&lt;&lt;PK&gt;&gt;numero_cedula
+nombre
+apellido
+fecha_nacimiento
+fecha_ingreso
+escuela
+tornes_inscritos</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>403</x>
+      <y>455</y>
+      <w>273</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>HOJA_VIDA_DEPORTIVA
+--
+grado
+fecha_obtencion_grado
+modalidad
+descripcion</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>468</y>
+      <w>273</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>EXAMENES
+--
+fecha_presentacion
+modalidad
+puntaje_figuras
+nombre_instructor
+nacionalidad_participante
+indicador_prueba
+cedula_participante</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1027</x>
+      <y>182</y>
+      <w>273</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>TORNEO	
+--
+nombre
+fecha_inicio
+fecha_finalizacion
+valor_inscripcion
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1339</x>
+      <y>182</y>
+      <w>273</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>MODALIDAD_COMBATE
+--
+fecha_programada
+numero_tatami
+escuela[0..1]
+nombre_participante_rojo
+nacionalidad_participante_rojo
+nombre_participante_azul
+nacionalidad_participante_azul
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>715</x>
+      <y>182</y>
+      <w>273</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>CATEGORIA
+--
+peso_deportista
+nombre
+peso_limite_inferior
+peso_limites_superior
+numero_asaltos
+duracion_asaltos
+descripcion
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
