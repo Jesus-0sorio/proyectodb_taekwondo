@@ -5,11 +5,11 @@
     <id>UMLClass</id>
     <coordinates>
       <x>900</x>
-      <y>590</y>
+      <y>700</y>
       <w>210</w>
       <h>180</h>
     </coordinates>
-    <panel_attributes>MODALIDADES_DE_COMBATE
+    <panel_attributes>MODALIDADES_COMBATE
 --
 fecha_programada
 numero_tatami
@@ -26,7 +26,7 @@ observacion</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1210</x>
-      <y>430</y>
+      <y>510</y>
       <w>210</w>
       <h>130</h>
     </coordinates>
@@ -46,7 +46,7 @@ fecha_ingreso
     <id>UMLClass</id>
     <coordinates>
       <x>670</x>
-      <y>100</y>
+      <y>180</y>
       <w>210</w>
       <h>210</h>
     </coordinates>
@@ -72,7 +72,7 @@ nombre_vocal [0..1]
     <id>UMLClass</id>
     <coordinates>
       <x>890</x>
-      <y>160</y>
+      <y>240</y>
       <w>210</w>
       <h>130</h>
     </coordinates>
@@ -83,7 +83,7 @@ fecha_afiliacion
 modalidad_escuela
 ciudad_sede
 nombre_director
-grado_directo
+grado_director
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -91,11 +91,11 @@ grado_directo
     <id>UMLClass</id>
     <coordinates>
       <x>360</x>
-      <y>180</y>
+      <y>230</y>
       <w>240</w>
       <h>160</h>
     </coordinates>
-    <panel_attributes>COLEGIO_ARBITRO
+    <panel_attributes>COLEGIO_ARBITROS
 --
 &lt;&lt;PK&gt;&gt;resolucion_funcionamiento
 fecha_creacion
@@ -110,34 +110,38 @@ manejo_comite_etica [0..1]</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1210</x>
-      <y>140</y>
+      <y>220</y>
       <w>210</w>
-      <h>150</h>
+      <h>160</h>
     </coordinates>
-    <panel_attributes>EXAMEN_DE_GRADO
+    <panel_attributes>EXAMEN_GRADO
 --
 fecha_presentacion
 modalidad
+puntaje_combante
 puntaje_figuras
 nombre_instructor
 nacionalidad_participante
 indicador_prueba
-cedula_participante</panel_attributes>
+cedula_participante
+group=group-0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>890</x>
-      <y>430</y>
+      <y>510</y>
       <w>210</w>
-      <h>100</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>COMPETICION
 --
 nombre
 fecha_inicio
 fecha_finalizacion
+valor
+tipo
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -145,7 +149,7 @@ fecha_finalizacion
     <id>UMLClass</id>
     <coordinates>
       <x>360</x>
-      <y>410</y>
+      <y>490</y>
       <w>210</w>
       <h>80</h>
     </coordinates>
@@ -155,6 +159,7 @@ fecha_finalizacion
 nombre:
 rol_ocupado
 
+
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -162,21 +167,20 @@ rol_ocupado
     <id>UMLClass</id>
     <coordinates>
       <x>1580</x>
-      <y>450</y>
+      <y>530</y>
       <w>210</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>HOJA_DE_VIDA
+    <panel_attributes>HOJA_VIDA
 --
-modalidad
-descripcion</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>640</x>
-      <y>570</y>
+      <y>650</y>
       <w>210</w>
       <h>160</h>
     </coordinates>
@@ -196,11 +200,13 @@ descripcion
     <id>Relation</id>
     <coordinates>
       <x>810</x>
-      <y>60</y>
-      <w>210</w>
+      <y>140</y>
+      <w>230</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1
+m1=1..*
 rige</panel_attributes>
     <additional_attributes>190.0;100.0;190.0;20.0;10.0;20.0;10.0;40.0</additional_attributes>
   </element>
@@ -208,23 +214,27 @@ rige</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>460</x>
-      <y>40</y>
-      <w>320</w>
-      <h>160</h>
+      <y>120</y>
+      <w>330</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1
+m1=1..*
 administra</panel_attributes>
-    <additional_attributes>10.0;140.0;10.0;20.0;300.0;20.0;300.0;60.0</additional_attributes>
+    <additional_attributes>10.0;110.0;10.0;20.0;300.0;20.0;300.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>770</x>
-      <y>40</y>
-      <w>580</w>
+      <y>120</y>
+      <w>600</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1
+m1=1..*
 aprueba</panel_attributes>
     <additional_attributes>560.0;100.0;560.0;20.0;10.0;20.0;10.0;60.0</additional_attributes>
   </element>
@@ -232,23 +242,27 @@ aprueba</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1310</x>
-      <y>280</y>
+      <y>370</y>
       <w>80</w>
-      <h>170</h>
+      <h>160</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-entregan</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;
+m2=1
+m1=1..*
+presenta</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>990</x>
-      <y>280</y>
+      <y>360</y>
       <w>80</w>
       <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1
+m1=1..*
 organiza</panel_attributes>
     <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
   </element>
@@ -256,35 +270,39 @@ organiza</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>990</x>
-      <y>520</y>
+      <y>610</y>
       <w>50</w>
-      <h>90</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 son</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>460</x>
-      <y>330</y>
+      <y>380</y>
       <w>80</w>
-      <h>100</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1
+m1=1..*
 agrupan</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>560</x>
-      <y>430</y>
+      <y>510</y>
       <w>350</w>
-      <h>40</h>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=3..10
+m1=1
 arbitran</panel_attributes>
     <additional_attributes>330.0;20.0;10.0;20.0</additional_attributes>
   </element>
@@ -292,23 +310,25 @@ arbitran</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>590</x>
-      <y>260</y>
+      <y>310</y>
       <w>340</w>
-      <h>190</h>
+      <h>220</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 interviene</panel_attributes>
-    <additional_attributes>320.0;170.0;320.0;130.0;50.0;130.0;50.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>320.0;200.0;320.0;160.0;50.0;160.0;50.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1090</x>
-      <y>220</y>
+      <y>300</y>
       <w>140</w>
-      <h>260</h>
+      <h>270</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1..*
+m1=1
 pertenece</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;10.0;60.0;240.0;120.0;240.0</additional_attributes>
   </element>
@@ -316,15 +336,18 @@ pertenece</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1570</x>
-      <y>630</y>
+      <y>710</y>
       <w>210</w>
-      <h>90</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>GRADO
 --
+modalidad
+descripcion
 grado:cadena
-numero_dan:entero
+numero_dan[0..1]:entero(10)
 fecha_obtencion_grado
+
 
 </panel_attributes>
     <additional_attributes/>
@@ -332,24 +355,14 @@ fecha_obtencion_grado
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1090</x>
-      <y>470</y>
-      <w>140</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-inscribe</panel_attributes>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>1070</x>
-      <y>280</y>
+      <y>360</y>
       <w>60</w>
       <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1
+m1=1..*
 paga</panel_attributes>
     <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
   </element>
@@ -357,11 +370,13 @@ paga</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1090</x>
-      <y>500</y>
+      <y>560</y>
       <w>140</w>
-      <h>40</h>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1..*
+m1=1
 participa</panel_attributes>
     <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
   </element>
@@ -369,11 +384,13 @@ participa</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>790</x>
-      <y>300</y>
-      <w>190</w>
+      <y>380</y>
+      <w>210</w>
       <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1
+m1=1..*
 avala</panel_attributes>
     <additional_attributes>170.0;130.0;170.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
   </element>
@@ -381,23 +398,27 @@ avala</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>730</x>
-      <y>480</y>
+      <y>560</y>
       <w>180</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-realizan</panel_attributes>
+m2=1
+m1=1..*
+contiene</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;20.0;160.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1410</x>
-      <y>470</y>
+      <y>550</y>
       <w>190</w>
-      <h>40</h>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m2=1
+m1=1
 tienen</panel_attributes>
     <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
   </element>
@@ -405,18 +426,21 @@ tienen</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1670</x>
-      <y>520</y>
-      <w>30</w>
+      <y>600</y>
+      <w>80</w>
       <h>130</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;-
+m2=1..*
+m1=1
+obtenido</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>30</y>
+      <y>110</y>
       <w>290</w>
       <h>830</h>
     </coordinates>
