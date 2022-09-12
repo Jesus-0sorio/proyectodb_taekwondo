@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="15.0.0">
-  <zoom_level>10</zoom_level>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>700</y>
-      <w>210</w>
-      <h>180</h>
+      <x>720</x>
+      <y>528</y>
+      <w>168</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>MODALIDADES_COMBATE
 --
@@ -25,10 +25,10 @@ observacion</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1210</x>
-      <y>510</y>
-      <w>210</w>
-      <h>130</h>
+      <x>968</x>
+      <y>328</y>
+      <w>168</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>PRACTICANTE
 --
@@ -45,10 +45,10 @@ fecha_ingreso
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>670</x>
-      <y>180</y>
-      <w>210</w>
-      <h>210</h>
+      <x>536</x>
+      <y>64</y>
+      <w>168</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>FEDERACION
 --
@@ -71,10 +71,10 @@ nombre_vocal [0..1]
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>890</x>
-      <y>240</y>
-      <w>210</w>
-      <h>130</h>
+      <x>712</x>
+      <y>112</y>
+      <w>168</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>LIGA
 --
@@ -90,10 +90,10 @@ grado_director
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>230</y>
-      <w>240</w>
-      <h>160</h>
+      <x>288</x>
+      <y>104</y>
+      <w>192</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>COLEGIO_ARBITROS
 --
@@ -109,10 +109,10 @@ manejo_comite_etica [0..1]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1210</x>
-      <y>220</y>
-      <w>210</w>
-      <h>160</h>
+      <x>968</x>
+      <y>96</y>
+      <w>168</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>EXAMEN_GRADO
 --
@@ -123,17 +123,16 @@ puntaje_figuras
 nombre_instructor
 nacionalidad_participante
 indicador_prueba
-cedula_participante
-group=group-0</panel_attributes>
+cedula_participante</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>890</x>
-      <y>510</y>
-      <w>210</w>
-      <h>110</h>
+      <x>712</x>
+      <y>328</y>
+      <w>168</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>COMPETICION
 --
@@ -148,10 +147,10 @@ tipo
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>490</y>
-      <w>210</w>
-      <h>80</h>
+      <x>288</x>
+      <y>312</y>
+      <w>168</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>ARBITRO
 --
@@ -166,10 +165,10 @@ rol_ocupado
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1580</x>
-      <y>530</y>
-      <w>210</w>
-      <h>80</h>
+      <x>1264</x>
+      <y>344</y>
+      <w>168</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>HOJA_VIDA
 --
@@ -179,10 +178,10 @@ rol_ocupado
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
-      <y>650</y>
-      <w>210</w>
-      <h>160</h>
+      <x>512</x>
+      <y>488</y>
+      <w>168</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>CATEGORIA
 --
@@ -199,146 +198,150 @@ descripcion
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>140</y>
-      <w>230</w>
-      <h>120</h>
+      <x>648</x>
+      <y>32</y>
+      <w>184</w>
+      <h>96</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=1
 m1=1..*
-rige</panel_attributes>
+rige &gt;</panel_attributes>
     <additional_attributes>190.0;100.0;190.0;20.0;10.0;20.0;10.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>120</y>
-      <w>330</w>
-      <h>130</h>
+      <x>368</x>
+      <y>16</y>
+      <w>264</w>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=1
 m1=1..*
-administra</panel_attributes>
+&lt; administra</panel_attributes>
     <additional_attributes>10.0;110.0;10.0;20.0;300.0;20.0;300.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>770</x>
-      <y>120</y>
-      <w>600</w>
-      <h>120</h>
+      <x>616</x>
+      <y>16</y>
+      <w>480</w>
+      <h>96</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=1
 m1=1..*
-aprueba</panel_attributes>
+aprueba &gt;</panel_attributes>
     <additional_attributes>560.0;100.0;560.0;20.0;10.0;20.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1310</x>
-      <y>370</y>
+      <x>1048</x>
+      <y>216</y>
       <w>80</w>
-      <h>160</h>
+      <h>128</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;
+    <panel_attributes>lt=-
 m2=1
 m1=1..*
-presenta</panel_attributes>
+&lt; presenta</panel_attributes>
     <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>990</x>
-      <y>360</y>
+      <x>792</x>
+      <y>208</y>
       <w>80</w>
-      <h>170</h>
+      <h>136</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=1
 m1=1..*
-organiza</panel_attributes>
+organiza &gt;</panel_attributes>
     <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>990</x>
-      <y>610</y>
-      <w>50</w>
-      <h>110</h>
+      <x>792</x>
+      <y>408</y>
+      <w>64</w>
+      <h>136</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-son</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=-
+tiene &gt;
+m1= 1
+m2= 1..*</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>380</y>
+      <x>368</x>
+      <y>224</y>
       <w>80</w>
-      <h>130</h>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=1
 m1=1..*
-agrupan</panel_attributes>
+agrupan &gt;</panel_attributes>
     <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>510</y>
-      <w>350</w>
-      <h>50</h>
+      <x>448</x>
+      <y>328</y>
+      <w>280</w>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=3..10
 m1=1
-arbitran</panel_attributes>
+arbitran &gt;</panel_attributes>
     <additional_attributes>330.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
-      <y>310</y>
-      <w>340</w>
-      <h>220</h>
+      <x>472</x>
+      <y>168</y>
+      <w>288</w>
+      <h>176</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-interviene</panel_attributes>
+    <panel_attributes>lt=-
+interviene &gt;
+m1= 1..*
+m2= 1..*</panel_attributes>
     <additional_attributes>320.0;200.0;320.0;160.0;50.0;160.0;50.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1090</x>
-      <y>300</y>
-      <w>140</w>
-      <h>270</h>
+      <x>872</x>
+      <y>160</y>
+      <w>128</w>
+      <h>216</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=1..*
 m1=1
-pertenece</panel_attributes>
+&lt; pertenece</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;10.0;60.0;240.0;120.0;240.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1570</x>
-      <y>710</y>
-      <w>210</w>
-      <h>110</h>
+      <x>1256</x>
+      <y>488</y>
+      <w>168</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>GRADO
 --
@@ -355,24 +358,24 @@ fecha_obtencion_grado
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1070</x>
-      <y>360</y>
-      <w>60</w>
-      <h>170</h>
+      <x>856</x>
+      <y>208</y>
+      <w>64</w>
+      <h>136</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=1
 m1=1..*
-paga</panel_attributes>
+paga &gt;</panel_attributes>
     <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1090</x>
-      <y>560</y>
-      <w>140</w>
-      <h>50</h>
+      <x>872</x>
+      <y>368</y>
+      <w>112</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1..*
@@ -383,38 +386,38 @@ participa</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>790</x>
-      <y>380</y>
-      <w>210</w>
-      <h>150</h>
+      <x>632</x>
+      <y>224</y>
+      <w>168</w>
+      <h>120</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=1
 m1=1..*
-avala</panel_attributes>
+avala &gt;</panel_attributes>
     <additional_attributes>170.0;130.0;170.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>730</x>
-      <y>560</y>
-      <w>180</w>
-      <h>110</h>
+      <x>584</x>
+      <y>376</y>
+      <w>144</w>
+      <h>128</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=-
 m2=1
 m1=1..*
-contiene</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;20.0;160.0;20.0</additional_attributes>
+&lt; contiene</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0;160.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1410</x>
-      <y>550</y>
-      <w>190</w>
-      <h>50</h>
+      <x>1128</x>
+      <y>360</y>
+      <w>152</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1
@@ -425,10 +428,10 @@ tienen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1670</x>
-      <y>600</y>
-      <w>80</w>
-      <h>130</h>
+      <x>1336</x>
+      <y>400</y>
+      <w>64</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1..*
@@ -440,12 +443,26 @@ obtenido</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>110</y>
-      <w>290</w>
-      <h>830</h>
+      <y>8</y>
+      <w>232</w>
+      <h>664</h>
     </coordinates>
     <panel_attributes>Consideraciones
 bg=cyan</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1048</x>
+      <y>424</y>
+      <w>224</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+obtiene &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;260.0;140.0</additional_attributes>
   </element>
 </diagram>
