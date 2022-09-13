@@ -387,7 +387,7 @@ divide</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>0</x>
+      <x>26</x>
       <y>624</y>
       <w>793</w>
       <h>585</h>
@@ -400,26 +400,27 @@ GRADO:
 -numero_dan: Indica tambien el tiempo y maestria del practicante, solo puede estar entre (1..10)
 
 COMPETICION:
--numero_asaltos: son rounds
--duracion_asaltos: se mide en round
--Nacionales e internacionales son de 3 asaltos de 3 minutos y 1 minuto de descanso
--Regionales: 1 solo asalto de 3 minutos.
+-tipo: (nacionales, internacionales y regionales)
 
 CATEGORIA:
 -nombre: se refiere a como es conocido el deportista (gallo, pluma, ligero...)
 -el atributo peso_limite_inferior esta en numerico flotante KG
 -el atributo peso_limite_superior esta en numerico flotante KG
+-numero_asaltos: depende del tipo de competicion nacionales e internacionales son de 3 asaltos 
+y regionales de 1 asalto
+-duracion_asaltos: duracion de 3 minutos por cada asalto
 
 PRACTICANTE:
 -si un practicante no tiene ningun examen de grado, su grado es blanco.
 -el atributo peso esta en numerico flotante KG
 
 LIGA
--la liga al gestionar la competicion las organiza y paga la inscripcion de los participantes
+-la liga al gestionar las competiciones algunas las organiza y paga la inscripcion de 
+los participantes que pertenecen a ella
 
 Generales
 -las fechas en general estan en dd/mm/aaaa hh:mm
--En la actualidad se reconocen dos escuelas: ITF y WTF.</panel_attributes>
+-escuela: (ITF, WTF)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
