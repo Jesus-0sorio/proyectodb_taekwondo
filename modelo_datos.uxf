@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="15.0.0">
-  <zoom_level>8</zoom_level>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
-      <y>528</y>
-      <w>208</w>
-      <h>120</h>
+      <x>1100</x>
+      <y>781</y>
+      <w>286</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>COMBATE
 --
 &lt;&lt;PK&gt;&gt;fecha_programada: fecha
-numero_tatami: cadena
+&lt;&lt;PK&gt;&gt;numero_tatami: cadena
 escuela: cadena[0..1]
 nombre_participante_rojo: cadena
 nombre_participante_azul: cadena
@@ -23,10 +23,10 @@ observacion: cadena</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>344</y>
-      <w>192</w>
-      <h>120</h>
+      <x>1463</x>
+      <y>528</y>
+      <w>264</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>PRACTICANTE
 --
@@ -44,10 +44,10 @@ peso:flotante
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>512</x>
-      <y>80</y>
-      <w>208</w>
-      <h>168</h>
+      <x>825</x>
+      <y>165</y>
+      <w>286</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>FEDERACION
 --
@@ -69,10 +69,10 @@ nombre_vocal: cadena[0..1]
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>736</x>
-      <y>128</y>
-      <w>184</w>
-      <h>104</h>
+      <x>1133</x>
+      <y>231</y>
+      <w>253</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>LIGA
 --
@@ -88,10 +88,10 @@ grado_director: cadena
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>232</x>
-      <y>120</y>
-      <w>216</w>
-      <h>128</h>
+      <x>440</x>
+      <y>220</y>
+      <w>297</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>COLEGIO
 --
@@ -107,14 +107,14 @@ manejo_comite_etica: cadena[0..1]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>952</x>
-      <y>112</y>
-      <w>208</w>
-      <h>128</h>
+      <x>1430</x>
+      <y>209</y>
+      <w>286</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>EXAMEN
 --
-cedula_participante: cadena
+&lt;&lt;PK&gt;&gt;cedula_participante: cadena
 &lt;&lt;PK&gt;&gt;fecha_presentacion: fecha
 escuela:cadena
 puntaje_combante: entero
@@ -128,10 +128,10 @@ pais_federacion:cadena
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>344</y>
-      <w>168</w>
-      <h>104</h>
+      <x>1111</x>
+      <y>528</y>
+      <w>231</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>COMPETICION
 --
@@ -147,10 +147,10 @@ tipo: cadena
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>256</x>
-      <y>328</y>
-      <w>168</w>
-      <h>64</h>
+      <x>198</x>
+      <y>561</y>
+      <w>231</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>ARBITRO
 --
@@ -165,10 +165,10 @@ rol_ocupado: cadena
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>504</x>
-      <y>648</y>
-      <w>192</w>
-      <h>104</h>
+      <x>814</x>
+      <y>946</y>
+      <w>264</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>CATEGORIA
 --
@@ -184,10 +184,10 @@ descripcion: cadena
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>656</x>
-      <y>48</y>
-      <w>216</w>
-      <h>96</h>
+      <x>1023</x>
+      <y>121</y>
+      <w>297</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1
@@ -198,10 +198,10 @@ rige</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>24</y>
-      <w>280</w>
-      <h>112</h>
+      <x>583</x>
+      <y>88</y>
+      <w>385</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1
@@ -212,10 +212,10 @@ administra</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>624</x>
-      <y>32</y>
-      <w>480</w>
-      <h>96</h>
+      <x>979</x>
+      <y>99</y>
+      <w>660</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1
@@ -226,10 +226,10 @@ aprueba</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1056</x>
-      <y>232</y>
-      <w>64</w>
-      <h>128</h>
+      <x>1573</x>
+      <y>374</y>
+      <w>88</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m2=0...*
@@ -240,10 +240,10 @@ presenta</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>824</x>
-      <y>224</y>
-      <w>64</w>
-      <h>136</h>
+      <x>1254</x>
+      <y>363</y>
+      <w>88</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1
@@ -254,10 +254,10 @@ gestiona</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>440</y>
-      <w>48</w>
-      <h>104</h>
+      <x>1221</x>
+      <y>660</y>
+      <w>66</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 tiene
@@ -268,52 +268,52 @@ m2= 1..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>240</y>
-      <w>64</w>
-      <h>104</h>
+      <x>308</x>
+      <y>385</y>
+      <w>319</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1
 m1=1..*
 agrupan</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;160.0;10.0;70.0;260.0;70.0;260.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>416</x>
-      <y>352</y>
-      <w>352</w>
-      <h>192</h>
+      <x>297</x>
+      <y>638</y>
+      <w>880</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=3..10
 m1=1
 arbitran</panel_attributes>
-    <additional_attributes>410.0;220.0;410.0;170.0;230.0;170.0;230.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>770.0;130.0;770.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>184</y>
-      <w>328</w>
-      <h>176</h>
+      <x>682</x>
+      <y>308</y>
+      <w>143</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-interviene
+realiza una
 m1= 1..*
-m2= 1..*</panel_attributes>
-    <additional_attributes>370.0;200.0;370.0;160.0;70.0;160.0;70.0;10.0;10.0;10.0</additional_attributes>
+m2= 1</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;110.0;110.0;110.0;110.0;10.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>912</x>
-      <y>176</y>
-      <w>96</w>
-      <h>216</h>
+      <x>1375</x>
+      <y>297</y>
+      <w>132</w>
+      <h>297</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1..*
@@ -324,14 +324,14 @@ pertenece</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1280</x>
-      <y>136</y>
-      <w>280</w>
-      <h>112</h>
+      <x>1881</x>
+      <y>242</y>
+      <w>385</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>GRADO
 --
-fecha_presentacion_examen_grado: fecha
+&lt;&lt;PK&gt;&gt;fecha_presentacion_examen_grado: fecha
 &lt;&lt;PK&gt;&gt;consecutivo:entero
 numero_dan: entero(2)[0..1]
 escuela:cadena
@@ -345,10 +345,10 @@ tipo:cadena
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>880</x>
-      <y>384</y>
-      <w>112</w>
-      <h>40</h>
+      <x>1331</x>
+      <y>583</y>
+      <w>154</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1..*
@@ -359,10 +359,10 @@ participa</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>616</x>
-      <y>240</y>
-      <w>192</w>
-      <h>120</h>
+      <x>968</x>
+      <y>385</y>
+      <w>264</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1
@@ -373,24 +373,24 @@ avala</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>552</y>
-      <w>128</w>
-      <h>112</h>
+      <x>946</x>
+      <y>825</y>
+      <w>176</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1
 m1=1..*
 divide</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;20.0;140.0;20.0</additional_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0;140.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>0</x>
-      <y>408</y>
-      <w>488</w>
-      <h>360</h>
+      <x>1760</x>
+      <y>539</y>
+      <w>671</w>
+      <h>495</h>
     </coordinates>
     <panel_attributes>Consideraciones
 --
@@ -403,7 +403,7 @@ COMPETICION:
 -tipo: (nacionales, internacionales y regionales)
 
 CATEGORIA:
--nombre: se refiere a como es conocido el deportista (gallo, pluma, ligero...)
+-nombre: se refiere a como es conocido el deportista (gallo, pluma, ligero)
 -el atributo peso_limite_inferior esta en numerico flotante KG tiene dos decimales
 -el atributo peso_limite_superior esta en numerico flotante KG tiene dos decimales
 -numero_asaltos: depende del tipo de competicion nacionales e internacionales son de 3 asaltos 
@@ -420,16 +420,17 @@ los participantes que pertenecen a ella
 
 Generales
 -las fechas en general estan en dd/mm/aaaa hh:mm
--escuela: (ITF, WTF)</panel_attributes>
+-escuela: (ITF, WTF)
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1152</x>
-      <y>160</y>
-      <w>144</w>
-      <h>40</h>
+      <x>1705</x>
+      <y>275</y>
+      <w>198</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0...*
@@ -440,15 +441,55 @@ entrega</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>688</x>
-      <y>456</y>
-      <w>416</w>
-      <h>272</h>
+      <x>1067</x>
+      <y>682</y>
+      <w>572</w>
+      <h>374</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=1..*
 m1=1
 posee</panel_attributes>
     <additional_attributes>10.0;310.0;480.0;310.0;480.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>506</y>
+      <w>352</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>INTERVENCION
+--
+&lt;&lt;PK&gt;&gt;&lt;&lt;FK&gt;&gt;consecutivo:entero
+&lt;&lt;PK&gt;&gt;&lt;&lt;FK&gt;&gt;fecha_inicio: fecha
+&lt;&lt;PK&gt;&gt;&lt;&lt;FK&gt;&gt;resolucion_funcionamiento: cadena</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>209</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>957</x>
+      <y>528</y>
+      <w>176</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+sucede en
+m1= 1..*
+m2= 1</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
