@@ -15,13 +15,14 @@ public class Liga {
     protected String fechaAfiliacion;
     protected String escuela;
     protected String ciudadSede;
+    protected String identificacionFederacion;
 
-    
-    public Liga(String personeriaJuridica, String fechaAfiliacion, String escuela, String ciudadSede){
+    public Liga(String personeriaJuridica, String fechaAfiliacion, String escuela, String ciudadSede, String identificacionFederacion) {
         this.personeriaJuridica = personeriaJuridica;
         this.fechaAfiliacion = fechaAfiliacion;
         this.escuela = escuela;
         this.ciudadSede = ciudadSede;
+        this.identificacionFederacion = identificacionFederacion;
     }
 
     public String getPersoneriaJuridica() {
@@ -54,6 +55,14 @@ public class Liga {
 
     public void setCiudadSede(String ciudadSede) {
         this.ciudadSede = ciudadSede;
+    }
+
+    public String getIdentificacionFederacion() {
+        return identificacionFederacion;
+    }
+
+    public void setIdentificacionFederacion(String identificacionFederacion) {
+        this.identificacionFederacion = identificacionFederacion;
     }
     
 }

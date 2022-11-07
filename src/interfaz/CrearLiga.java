@@ -7,7 +7,6 @@ package interfaz;
 
 import Modelo.Director;
 import Modelo.Liga;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -36,15 +35,15 @@ public class CrearLiga extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel12 = new javax.swing.JLabel();
+        validacion_dan = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        formulario = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         JTextpersoneriajuridica = new javax.swing.JTextField();
-        JComboescuela = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         JDatefechaafiliacion = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
+        JComboescuela = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         JTextciudadsede = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -53,120 +52,182 @@ public class CrearLiga extends javax.swing.JPanel {
         JTextnombre = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         JCombogrado = new javax.swing.JComboBox<>();
+        panelDAN = new javax.swing.JPanel();
+        check_si = new javax.swing.JCheckBox();
         jLabel9 = new javax.swing.JLabel();
-        DAN_director = new javax.swing.JComboBox<>();
-        jPanel3 = new javax.swing.JPanel();
+        check_no = new javax.swing.JCheckBox();
+        JCombodan = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        JTextidentificacionfederacion = new javax.swing.JTextField();
+        btn_crear = new javax.swing.JButton();
+        titulo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
-        jLabel12.setText(" ");
+        setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jPanel4.setBackground(new java.awt.Color(0, 51, 51));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel4.setLayout(new java.awt.GridLayout(8, 2));
+        formulario.setBackground(new java.awt.Color(0, 0, 0));
+        formulario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        formulario.setLayout(new java.awt.GridLayout(10, 2));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Personeria Juridica");
-        jPanel4.add(jLabel2);
+        formulario.add(jLabel2);
 
         JTextpersoneriajuridica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextpersoneriajuridicaActionPerformed(evt);
             }
         });
-        jPanel4.add(JTextpersoneriajuridica);
+        formulario.add(JTextpersoneriajuridica);
 
-        JComboescuela.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "WTF", "ITF" }));
-        jPanel4.add(JComboescuela);
-
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Fecha de Afiliación");
-        jPanel4.add(jLabel3);
+        formulario.add(jLabel3);
 
-        JDatefechaafiliacion.setDateFormatString("yyyy/MM/d ");
-        jPanel4.add(JDatefechaafiliacion);
+        JDatefechaafiliacion.setDateFormatString("yyyy/MM/d");
+        formulario.add(JDatefechaafiliacion);
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Escuela");
-        jPanel4.add(jLabel4);
+        formulario.add(jLabel4);
 
+        JComboescuela.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "WTF", "ITF" }));
+        JComboescuela.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboescuelaActionPerformed(evt);
+            }
+        });
+        formulario.add(JComboescuela);
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ciudad de Sede");
-        jPanel4.add(jLabel5);
-        jPanel4.add(JTextciudadsede);
+        formulario.add(jLabel5);
+        formulario.add(JTextciudadsede);
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Cedula del Director");
-        jPanel4.add(jLabel6);
-        jPanel4.add(JTextcedula);
+        formulario.add(jLabel6);
+        formulario.add(JTextcedula);
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nombre del Director");
-        jPanel4.add(jLabel7);
+        formulario.add(jLabel7);
 
         JTextnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextnombreActionPerformed(evt);
             }
         });
-        jPanel4.add(JTextnombre);
+        formulario.add(JTextnombre);
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Grado del Director");
-        jPanel4.add(jLabel8);
+        formulario.add(jLabel8);
 
-        JCombogrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Blanco", "Amarillo", "Verde", "Azul", "Rojo", "Negro" }));
-        jPanel4.add(JCombogrado);
+        JCombogrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Blanco", "Amarillo", "Verde", "Azul", "Rojo", "Negro" }));
+        formulario.add(JCombogrado);
 
-        jLabel9.setText("DAN Director (Si tiene)");
-        jPanel4.add(jLabel9);
+        panelDAN.setBackground(new java.awt.Color(0, 0, 0));
 
-        DAN_director.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-        jPanel4.add(DAN_director);
+        check_si.setBackground(new java.awt.Color(0, 0, 0));
+        validacion_dan.add(check_si);
+        check_si.setForeground(new java.awt.Color(255, 255, 255));
+        check_si.setText("Si");
 
-        jPanel1.add(jPanel4, java.awt.BorderLayout.CENTER);
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Numero de DAN");
 
-        jPanel3.setBackground(new java.awt.Color(153, 153, 0));
+        check_no.setBackground(new java.awt.Color(0, 0, 0));
+        validacion_dan.add(check_no);
+        check_no.setForeground(new java.awt.Color(255, 255, 255));
+        check_no.setText("No");
 
-        jLabel1.setText("CREAR LIGA");
+        javax.swing.GroupLayout panelDANLayout = new javax.swing.GroupLayout(panelDAN);
+        panelDAN.setLayout(panelDANLayout);
+        panelDANLayout.setHorizontalGroup(
+            panelDANLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDANLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(check_si)
+                .addGap(18, 18, 18)
+                .addComponent(check_no)
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(panelDANLayout.createSequentialGroup()
+                .addComponent(jLabel9)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panelDANLayout.setVerticalGroup(
+            panelDANLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDANLayout.createSequentialGroup()
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelDANLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(check_si)
+                    .addComponent(check_no)))
+        );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        formulario.add(panelDAN);
+
+        JCombodan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        formulario.add(JCombodan);
+
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Identificación de la federación");
+        formulario.add(jLabel13);
+        formulario.add(JTextidentificacionfederacion);
+
+        btn_crear.setText("Crear");
+        btn_crear.setToolTipText("");
+        btn_crear.setBorderPainted(false);
+        btn_crear.setDefaultCapable(false);
+        btn_crear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_crearActionPerformed(evt);
+            }
+        });
+        formulario.add(btn_crear);
+
+        jPanel1.add(formulario, java.awt.BorderLayout.CENTER);
+
+        titulo.setBackground(new java.awt.Color(153, 153, 0));
+
+        jLabel1.setText("Crear liga");
+
+        javax.swing.GroupLayout tituloLayout = new javax.swing.GroupLayout(titulo);
+        titulo.setLayout(tituloLayout);
+        tituloLayout.setHorizontalGroup(
+            tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tituloLayout.createSequentialGroup()
                 .addGap(240, 240, 240)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(562, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        tituloLayout.setVerticalGroup(
+            tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tituloLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_START);
+        jPanel1.add(titulo, java.awt.BorderLayout.PAGE_START);
 
         jLabel10.setText("                         ");
         jPanel1.add(jLabel10, java.awt.BorderLayout.LINE_END);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, java.awt.BorderLayout.PAGE_END);
+        jLabel11.setText("                         ");
+        jPanel1.add(jLabel11, java.awt.BorderLayout.LINE_START);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
-        );
+        jLabel12.setText(" ");
+        jPanel1.add(jLabel12, java.awt.BorderLayout.PAGE_END);
+
+        add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTextpersoneriajuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextpersoneriajuridicaActionPerformed
@@ -177,23 +238,67 @@ public class CrearLiga extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTextnombreActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+    private void btn_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearActionPerformed
+        String error = "";
         //Declaracion de variables liga
         String personeriaJuridica = JTextpersoneriajuridica.getText();
+        if(personeriaJuridica.isEmpty()){
+            error += "El campo personeria juridica no puede estar vacio\n";
+        }
         String fechaAfiliacion = ((JTextField)JDatefechaafiliacion.getDateEditor().getUiComponent()).getText();
+        if(fechaAfiliacion.isEmpty()){
+            error += "Debe ingresar la fecha de afiliacion\n";
+        }
         String escuela = JComboescuela.getSelectedItem().toString();
+        if(escuela.equals("Seleccionar")){
+            error += "Debe seleccionar una escuela\n";
+        }
         String ciudadSede = JTextciudadsede.getText();
+        if(ciudadSede.isEmpty()){
+            error += "El campo ciudad de sede no puede estar vacio\n";
+        }
+        String identificacionFederacion = JTextidentificacionfederacion.getText();
+        if(identificacionFederacion.isEmpty()){
+            error += "El campo identificacion de la federacion no puede estar vacio\n";
+        }
+        
         //Declaracion de variables director
         String cedulaDirector = JTextcedula.getText();
+        if(cedulaDirector.isEmpty()){
+            error += "El campo cedula del director no puede estar vacio\n";
+        }
         String nombreDirector = JTextnombre.getText();
+        if(nombreDirector.isEmpty()){
+            error += "El campo nombre de director no puede estar vacio\n";
+        }
         String gradoDirector = JCombogrado.getSelectedItem().toString();
+        if(gradoDirector.equals("Seleccionar")){
+            error += "Debe seleccionar un grado para el director\n";
+        }
+        int danDirector = 0;
+        
+        
+        if(check_si.isSelected() && gradoDirector.equals("Negro")){
+            try{
+                danDirector = Integer.parseInt(JCombodan.getSelectedItem().toString());
+            } catch(Exception e){
+                error += "Debe seleccionar un numero de DAN para el director\n";
+            }
+        } else if(check_si.isSelected() && !gradoDirector.equals("Negro")){
+            error += "El director debe tener el grado Negro para tener un DAN\n";
+        }
+        
+        if(!error.isEmpty()){
+            JOptionPane.showMessageDialog(null, error, "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         //Creacion de objeto liga y creacion de query para crear liga
-        Liga liga = new Liga(personeriaJuridica, fechaAfiliacion, escuela, ciudadSede);
+        Liga liga = new Liga(personeriaJuridica, fechaAfiliacion, escuela, ciudadSede, identificacionFederacion);
         String queryLiga = "insert into LIGA(personeria_juridica,  fecha_afiliacion, escuela, ciudad_sede, numero_identificacion_federacion) values (?,?,?,?,?)";
         //Creacion de objeto director y creacion de query para crear director
-        Director director = new Director(cedulaDirector, nombreDirector, gradoDirector);
-        String queryDirector = "insert into Director(cedula, nombre, grado, numero_dan, personeria_juridica_liga) values (?,?,?,?,?)";
+        Director director = new Director(cedulaDirector, nombreDirector, gradoDirector, danDirector);
+        String queryDirector = "insert into DIRECTOR(cedula, nombre, grado, numero_dan, personeria_juridica_liga) values (?,?,?,?,?)";
         try{
             //Ingreso de datos para crear liga en la DB
             PreparedStatement psLiga = Principal.db.prepareStatement(queryLiga);
@@ -208,33 +313,45 @@ public class CrearLiga extends javax.swing.JPanel {
             psDirector.setString(1, director.getCedula());
             psDirector.setString(2, director.getNombre());
             psDirector.setString(3, director.getGrado());
-            //psDirector.setString(4, director.getNumeroDan());
-            psDirector.setString(5, liga.getPersoneriaJuridica());
+            if(danDirector > 0){
+                psDirector.setInt(4, director.getNumeroDan());
+            }
+            else{
+                psDirector.setString(4, null);
+            }
+            psDirector.setString(5, liga.getIdentificacionFederacion());
             psDirector.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Datos ingresados", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Liga creada", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException sqle){
             System.out.println(sqle);
         }
         
-        
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_crearActionPerformed
+
+    private void JComboescuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JComboescuelaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JComboescuelaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> DAN_director;
+    private javax.swing.JComboBox<String> JCombodan;
     private javax.swing.JComboBox<String> JComboescuela;
     private javax.swing.JComboBox<String> JCombogrado;
     private com.toedter.calendar.JDateChooser JDatefechaafiliacion;
     private javax.swing.JTextField JTextcedula;
     private javax.swing.JTextField JTextciudadsede;
+    private javax.swing.JTextField JTextidentificacionfederacion;
     private javax.swing.JTextField JTextnombre;
     private javax.swing.JTextField JTextpersoneriajuridica;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_crear;
+    private javax.swing.JCheckBox check_no;
+    private javax.swing.JCheckBox check_si;
+    private javax.swing.JPanel formulario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -244,7 +361,8 @@ public class CrearLiga extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel panelDAN;
+    private javax.swing.JPanel titulo;
+    private javax.swing.ButtonGroup validacion_dan;
     // End of variables declaration//GEN-END:variables
 }

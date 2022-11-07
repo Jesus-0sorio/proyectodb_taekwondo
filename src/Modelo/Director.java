@@ -14,11 +14,13 @@ public class Director {
     protected String cedula;
     protected String nombre;
     protected String grado;
+    protected int numeroDan;
 
-    public Director(String cedula, String nombre, String grado) {
+    public Director(String cedula, String nombre, String grado, int numeroDan) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.grado = grado;
+        this.numeroDan = numeroDan;
     }
 
     public String getCedula() {
@@ -44,6 +46,16 @@ public class Director {
     public void setGrado(String grado) {
         this.grado = grado;
     }
+
+    public int getNumeroDan() {
+        return numeroDan;
+    }
+
+    public void setNumeroDan(int numeroDan) {
+        this.numeroDan = numeroDan;
+    }
+
+    
     
     
 }

@@ -3,8 +3,8 @@
  */
 package interfaz;
 
-import Conexion.Conexion;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,17 +22,16 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form PRINCIPAL
      */
-    
-    // Declaracion de variable gobla de la DB
-    public static Connection db = null;
-    
-    
+    protected static Connection db = null;
+    protected static String estadoDB = null;
     public Principal() {
         initComponents();
 /*Esto basicamente hace que lo primero que veas sea el apartado de crear una liga*/    
-        CrearLiga cl = new CrearLiga();
-        ShowPanel(cl);
+        BaseDatos BD = new BaseDatos();
+        ShowPanel(BD);
         setLocationRelativeTo(null);
+        Thread hilo = new Thread(runnable);
+        hilo.start();
     }
 
     /**
@@ -52,10 +51,15 @@ public class Principal extends javax.swing.JFrame {
         diezEspacios2 = new javax.swing.JLabel();
         unEspacio2 = new javax.swing.JLabel();
         panelBotones = new javax.swing.JPanel();
+        btn_BaseDatos = new javax.swing.JButton();
         btn_crearLiga = new javax.swing.JButton();
         btn_inscribirParticipante = new javax.swing.JButton();
         btn_actualizarExamen = new javax.swing.JButton();
         btn_consultar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        JButtonestado = new javax.swing.JButton();
+        JLabelestado = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,6 +68,7 @@ public class Principal extends javax.swing.JFrame {
         panel_menu.setBackground(new java.awt.Color(153, 51, 0));
         panel_menu.setLayout(new java.awt.GridLayout(2, 1));
 
+        logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FCTDOS.png"))); // NOI18N
         panel_menu.add(logo);
 
@@ -87,7 +92,15 @@ public class Principal extends javax.swing.JFrame {
         panelLogin.add(unEspacio2, java.awt.BorderLayout.PAGE_END);
 
         panelBotones.setBackground(new java.awt.Color(153, 51, 0));
-        panelBotones.setLayout(new java.awt.GridLayout(4, 2));
+        panelBotones.setLayout(new java.awt.GridLayout(6, 2));
+
+        btn_BaseDatos.setText("Base de Datos");
+        btn_BaseDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BaseDatosActionPerformed(evt);
+            }
+        });
+        panelBotones.add(btn_BaseDatos);
 
         btn_crearLiga.setText("Crear Liga");
         btn_crearLiga.addActionListener(new java.awt.event.ActionListener() {
@@ -121,23 +134,62 @@ public class Principal extends javax.swing.JFrame {
         });
         panelBotones.add(btn_consultar);
 
+        jPanel1.setBackground(new java.awt.Color(153, 51, 0));
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Base de Datos:");
+
+        JButtonestado.setBackground(new java.awt.Color(255, 0, 0));
+        JButtonestado.setForeground(new java.awt.Color(255, 0, 0));
+        JButtonestado.setText(" ");
+
+        JLabelestado.setForeground(new java.awt.Color(255, 255, 255));
+        JLabelestado.setText("Desconectada");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1)
+                .addGap(29, 29, 29)
+                .addComponent(JButtonestado, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JLabelestado, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLabelestado)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(JButtonestado, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panelBotones.add(jPanel1);
+
         panelLogin.add(panelBotones, java.awt.BorderLayout.CENTER);
 
         panel_menu.add(panelLogin);
 
         getContentPane().add(panel_menu, java.awt.BorderLayout.LINE_START);
 
-        contenedor.setBackground(new java.awt.Color(0, 51, 51));
+        contenedor.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 573, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
+            .addGap(0, 760, Short.MAX_VALUE)
         );
 
         getContentPane().add(contenedor, java.awt.BorderLayout.CENTER);
@@ -145,33 +197,48 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    Runnable runnable = new Runnable(){ 
+    public void run(){
+        
+        while(true){
+            try{
+                Thread.sleep(5000);
+                if(estadoDB == "Desconectada" || estadoDB == null){
+                JLabelestado.setText("Desconectada");
+                JButtonestado.setBackground(Color.red);
+                } else{
+                JLabelestado.setText("Conectada");
+                JButtonestado.setBackground(Color.green);
+                }  
+            }catch (InterruptedException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+        }
+    };
     
 /********************************BOTONES DEL MENU*****************************/
     private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed
         // TODO add your handling code here:
         Consultar consu = new Consultar();
         ShowPanel(consu);
-        
-        String query = "select * from prueba";
-        try{
-            PreparedStatement ps = db.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-            System.out.println(rs);
-            while(rs.next()){
-                System.out.println(rs.getString("nombre"));
-                System.out.println(rs.getString("numero"));
-                System.out.println(rs.getString("fecha"));
-            }
-        } catch (SQLException ex) {
-            System.out.println("error: " + ex.getMessage());
-        }
-        
-        
-        
+//        String query = "select * from prueba";
+//        try{
+//            PreparedStatement ps = db.prepareStatement(query);
+//            ResultSet rs = ps.executeQuery();
+//            System.out.println(rs);
+//            while(rs.next()){
+//                System.out.println(rs.getString("nombre"));
+//                System.out.println(rs.getString("numero"));
+//                System.out.println(rs.getString("fecha"));
+//            }
+//        } catch (SQLException ex) {
+//            System.out.println("error: " + ex.getMessage());
+//        }
     }//GEN-LAST:event_btn_consultarActionPerformed
 
     private void btn_inscribirParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inscribirParticipanteActionPerformed
-        InscribirParticipante IP = new InscribirParticipante();
+        InscribirPracticante IP = new InscribirPracticante();
         ShowPanel(IP);
     }//GEN-LAST:event_btn_inscribirParticipanteActionPerformed
 
@@ -183,15 +250,21 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_crearLigaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearLigaActionPerformed
         // TODO add your handling code here:
-        BaseDatos cl = new BaseDatos();
+        CrearLiga cl = new CrearLiga();
         ShowPanel(cl);
     }//GEN-LAST:event_btn_crearLigaActionPerformed
+
+    private void btn_BaseDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BaseDatosActionPerformed
+        // TODO add your handling code here:
+        BaseDatos BD = new BaseDatos();
+        ShowPanel(BD);
+    }//GEN-LAST:event_btn_BaseDatosActionPerformed
 /******************************FIN DE BOTONES**********************************/
     
     
 /*******************METODO QUE PERMITE CAMBIAR LOS PANELES*********************/
     private void ShowPanel(JPanel p) {
-        p.setSize(573, 588);
+        p.setSize(573, 728);
         p.setLocation(0, 0);
         
         contenedor.removeAll();
@@ -239,6 +312,9 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JButtonestado;
+    private javax.swing.JLabel JLabelestado;
+    private javax.swing.JButton btn_BaseDatos;
     private javax.swing.JButton btn_actualizarExamen;
     private javax.swing.JButton btn_consultar;
     private javax.swing.JButton btn_crearLiga;
@@ -246,6 +322,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel contenedor;
     private javax.swing.JLabel diezEspacios;
     private javax.swing.JLabel diezEspacios2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel panelBotones;
     private javax.swing.JPanel panelLogin;

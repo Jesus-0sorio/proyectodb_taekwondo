@@ -17,7 +17,7 @@ public class Conexion {
     protected String usuario;
     protected String contrasena;
     protected String nombreDB;
-    protected String estadoDB;
+    protected String estadoDB = "Desconectada";
     private static Connection conexionDB;
 
     public Conexion(String usuario, String contrasena, String nombreDB) {
@@ -76,6 +76,7 @@ public class Conexion {
         try{     
             conexionDB.close();
             estadoDB = "Desconectada";
+            System.out.println("Conexion Terminada");
         }catch (SQLException sqle){
             System.out.println(sqle);
             conexionDB.close();

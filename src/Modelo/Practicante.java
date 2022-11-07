@@ -12,18 +12,17 @@ package Modelo;
  *
  * @author @jesus.osorio
  */
-public class Participante {
-    protected String liga;
-    protected int cedula;
+public class Practicante {
+    protected String cedula;
     protected String nombre;
     protected String apellido;
     protected String fechaNacimiento;
     protected String fechaIngreso;
     protected String nacionalidad;
     protected float peso;
+    protected String personeria_juridica_liga;
 
-    public Participante(String liga, int cedula, String nombre, String apellido, String fechaNacimiento, String fechaIngreso, String nacionalidad, float peso) {
-        this.liga = liga;
+    public Practicante(String cedula, String nombre, String apellido, String fechaNacimiento, String fechaIngreso, String nacionalidad, float peso, String personeria_juridica_liga) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -31,21 +30,14 @@ public class Participante {
         this.fechaIngreso = fechaIngreso;
         this.nacionalidad = nacionalidad;
         this.peso = peso;
+        this.personeria_juridica_liga = personeria_juridica_liga;
     }
 
-    public String getLiga() {
-        return liga;
-    }
-
-    public void setLiga(String liga) {
-        this.liga = liga;
-    }
-
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -96,6 +88,14 @@ public class Participante {
     public void setPeso(float peso) {
         this.peso = peso;
     }
-    
-    
+
+    public String getPersoneria_juridica_liga() {
+        return personeria_juridica_liga;
+    }
+
+    public void setPersoneria_juridica_liga(String personeria_juridica_liga) {
+        this.personeria_juridica_liga = personeria_juridica_liga;
+    }
+
+   
 }

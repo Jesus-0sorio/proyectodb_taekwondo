@@ -10,12 +10,12 @@ import java.sql.SQLException;
 
 /**
  *
- * @author ether
+ * @author juan_jose.saavedra
  */
 public class BaseDatos extends javax.swing.JPanel {
 
     /**
-     * Creates new form CREAR_LIGA
+     * Creates new form BaseDeDatos
      */
     
     private static Conexion db_connect = null;
@@ -32,172 +32,159 @@ public class BaseDatos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel12 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        nombre = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        usuario = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        contrasena = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        formularioBD = new javax.swing.JPanel();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        jLabel5 = new javax.swing.JLabel();
+        JTextnombreBD = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        JTextusuario = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        JTextpwd = new javax.swing.JPasswordField();
+        btn_conectar = new javax.swing.JButton();
+        btn_desconectar = new javax.swing.JButton();
 
-        jLabel12.setText(" ");
+        setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel4.setLayout(new java.awt.GridLayout(8, 2));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabel2.setText("Personeria Juridica");
-        jPanel4.add(jLabel2);
+        jLabel1.setText("Base de datos");
 
-        nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreActionPerformed(evt);
-            }
-        });
-        jPanel4.add(nombre);
-
-        jLabel3.setText("Fecha de Afiliación");
-        jPanel4.add(jLabel3);
-
-        usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usuarioActionPerformed(evt);
-            }
-        });
-        jPanel4.add(usuario);
-
-        jLabel7.setText("Nombre del Director");
-        jPanel4.add(jLabel7);
-
-        contrasena.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contrasenaActionPerformed(evt);
-            }
-        });
-        jPanel4.add(contrasena);
-
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton1);
-
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("jButton1");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton2);
-
-        jPanel1.add(jPanel4, java.awt.BorderLayout.CENTER);
-
-        jPanel3.setBackground(new java.awt.Color(153, 153, 0));
-
-        jLabel1.setText("CREAR LIGA");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(240, 240, 240)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(258, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addComponent(jLabel1)
+                .addContainerGap(333, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_START);
+        jPanel2.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
-        jLabel10.setText("                         ");
-        jPanel1.add(jLabel10, java.awt.BorderLayout.LINE_END);
+        jLabel2.setText("                         ");
+        jPanel2.add(jLabel2, java.awt.BorderLayout.LINE_END);
 
-        jLabel11.setText("                         ");
-        jPanel1.add(jLabel11, java.awt.BorderLayout.LINE_START);
+        jLabel3.setText(" ");
+        jPanel2.add(jLabel3, java.awt.BorderLayout.PAGE_END);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
-        );
+        jLabel4.setText("                         ");
+        jPanel2.add(jLabel4, java.awt.BorderLayout.LINE_START);
+
+        formularioBD.setBackground(new java.awt.Color(0, 0, 0));
+        formularioBD.setLayout(new java.awt.GridLayout(6, 2));
+        formularioBD.add(filler1);
+        formularioBD.add(filler2);
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Nombre de la base de datos");
+        formularioBD.add(jLabel5);
+
+        JTextnombreBD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTextnombreBDActionPerformed(evt);
+            }
+        });
+        formularioBD.add(JTextnombreBD);
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Usuario");
+        formularioBD.add(jLabel6);
+
+        JTextusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTextusuarioActionPerformed(evt);
+            }
+        });
+        formularioBD.add(JTextusuario);
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Contraseña");
+        formularioBD.add(jLabel7);
+        formularioBD.add(JTextpwd);
+
+        btn_conectar.setText("Conectar");
+        btn_conectar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_conectarActionPerformed(evt);
+            }
+        });
+        formularioBD.add(btn_conectar);
+
+        btn_desconectar.setText("Desconectar");
+        btn_desconectar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_desconectarActionPerformed(evt);
+            }
+        });
+        formularioBD.add(btn_desconectar);
+
+        jPanel2.add(formularioBD, java.awt.BorderLayout.CENTER);
+
+        add(jPanel2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nameDB = nombre.getText();
-        String user = usuario.getText();
-        String pwd = contrasena.getText();
+    private void JTextusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextusuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTextusuarioActionPerformed
+
+    private void btn_conectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_conectarActionPerformed
+        String nameDB = JTextnombreBD.getText();
+        String user = JTextusuario.getText();
+        String pwd =  new String(JTextpwd.getPassword());
         db_connect = new Conexion(user,pwd,nameDB);
-  
         Principal.db = db_connect.conectar();
-        if(db_connect.getEstadoDB() == "Conectada"){
-            
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Principal.estadoDB = db_connect.getEstadoDB();
+        System.out.println(Principal.estadoDB);
+    }//GEN-LAST:event_btn_conectarActionPerformed
 
-    private void contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contrasenaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contrasenaActionPerformed
-
-    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usuarioActionPerformed
-
-    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_desconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_desconectarActionPerformed
         try {
             db_connect.desconectar();
+            Principal.estadoDB = db_connect.getEstadoDB();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_desconectarActionPerformed
+
+    private void JTextnombreBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextnombreBDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTextnombreBDActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField contrasena;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JTextField JTextnombreBD;
+    private javax.swing.JPasswordField JTextpwd;
+    private javax.swing.JTextField JTextusuario;
+    private javax.swing.JButton btn_conectar;
+    private javax.swing.JButton btn_desconectar;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.JPanel formularioBD;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField nombre;
-    private javax.swing.JTextField usuario;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

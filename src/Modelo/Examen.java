@@ -18,9 +18,11 @@ public class Examen {
     protected int puntajeCombate;
     protected int puntajeFigura;
     protected String nombreInstructor;
-    protected char indicardorPrueba;
+    protected String indicardorPrueba;
+    protected String paisFederacion;
+    protected String identificacionFederacion;
 
-    public Examen(String cedula, String fechaPresentacion, String escuela, int puntajeCombate, int puntajeFigura, String nombreInstructor, char indicardorPrueba) {
+    public Examen(String cedula, String fechaPresentacion, String escuela, int puntajeCombate, int puntajeFigura, String nombreInstructor, String indicardorPrueba, String paisFederacion, String identificacionFederacion) {
         this.cedula = cedula;
         this.fechaPresentacion = fechaPresentacion;
         this.escuela = escuela;
@@ -28,6 +30,8 @@ public class Examen {
         this.puntajeFigura = puntajeFigura;
         this.nombreInstructor = nombreInstructor;
         this.indicardorPrueba = indicardorPrueba;
+        this.paisFederacion = paisFederacion;
+        this.identificacionFederacion = identificacionFederacion;
     }
 
     public String getCedula() {
@@ -78,13 +82,29 @@ public class Examen {
         this.nombreInstructor = nombreInstructor;
     }
 
-    public char getIndicardorPrueba() {
+    public String getIndicardorPrueba() {
         return indicardorPrueba;
     }
 
-    public void setIndicardorPrueba(char indicardorPrueba) {
+    public void setIndicardorPrueba(String indicardorPrueba) {
         this.indicardorPrueba = indicardorPrueba;
     }
-    
+
+    public String getPaisFederacion() {
+        return paisFederacion;
+    }
+
+    public void setPaisFederacion(String paisFederacion) {
+        this.paisFederacion = paisFederacion;
+    }
+
+    public String getIdentificacionFederacion() {
+        return identificacionFederacion;
+    }
+
+    public void setIdentificacionFederacion(String identificacionFederacion) {
+        this.identificacionFederacion = identificacionFederacion;
+    }
+
     
 }

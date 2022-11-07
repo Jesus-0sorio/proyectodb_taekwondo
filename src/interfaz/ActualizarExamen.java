@@ -5,6 +5,15 @@
  */
 package interfaz;
 
+import Modelo.Examen;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author ether
@@ -16,6 +25,7 @@ public class ActualizarExamen extends javax.swing.JPanel {
      */
     public ActualizarExamen() {
         initComponents();
+        ((JTextField) this.jDateFechaPresentacion.getDateEditor()).setEditable(false);
     }
 
     /**
@@ -32,17 +42,21 @@ public class ActualizarExamen extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         cedulaExamen = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        fechaExamen = new javax.swing.JTextField();
+        jDateFechaPresentacion = new com.toedter.calendar.JDateChooser();
+        btn_buscar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         escuelaExamen = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
-        puntajeExamen = new javax.swing.JTextField();
+        jTextPuntajeCombate = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        puntajeFigurasExamen = new javax.swing.JTextField();
+        jTextPuntajeFiguras = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        nombreInstructor = new javax.swing.JTextField();
+        jTextNombreInstructor = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        indicadorPrueba = new javax.swing.JComboBox<>();
+        jComboIndicadorPrueba = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jTextIdentificacionFederacion = new javax.swing.JTextField();
+        btn_actualizar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -51,52 +65,91 @@ public class ActualizarExamen extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        formularioP.setBackground(new java.awt.Color(0, 51, 51));
-        formularioP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        formularioP.setLayout(new java.awt.GridLayout(7, 2));
+        formularioP.setBackground(new java.awt.Color(0, 0, 0));
+        formularioP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        formularioP.setLayout(new java.awt.GridLayout(9, 2));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Cédula");
         formularioP.add(jLabel3);
         formularioP.add(cedulaExamen);
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha de presentación");
         formularioP.add(jLabel4);
 
-        fechaExamen.setText("dd/mm/aa");
-        formularioP.add(fechaExamen);
+        jDateFechaPresentacion.setDateFormatString("yyyy/MM/d");
+        formularioP.add(jDateFechaPresentacion);
 
+        btn_buscar.setText("Actualizar");
+        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscarActionPerformed(evt);
+            }
+        });
+        formularioP.add(btn_buscar);
+
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Escuela");
         formularioP.add(jLabel13);
 
-        escuelaExamen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "WTF", "ITF" }));
+        escuelaExamen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "WTF", "ITF" }));
         formularioP.add(escuelaExamen);
 
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Puntaje de combate");
         formularioP.add(jLabel14);
-        formularioP.add(puntajeExamen);
+        formularioP.add(jTextPuntajeCombate);
 
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Puntaje de figuras");
         formularioP.add(jLabel15);
-        formularioP.add(puntajeFigurasExamen);
+        formularioP.add(jTextPuntajeFiguras);
 
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Nombre del instructor");
         formularioP.add(jLabel16);
-        formularioP.add(nombreInstructor);
+        formularioP.add(jTextNombreInstructor);
 
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Indicador de prueba");
         formularioP.add(jLabel17);
 
-        indicadorPrueba.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "A", "N" }));
-        formularioP.add(indicadorPrueba);
+        jComboIndicadorPrueba.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "A", "N" }));
+        jComboIndicadorPrueba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboIndicadorPruebaActionPerformed(evt);
+            }
+        });
+        formularioP.add(jComboIndicadorPrueba);
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Número de identificación de la federación");
+        formularioP.add(jLabel2);
+
+        jTextIdentificacionFederacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIdentificacionFederacionActionPerformed(evt);
+            }
+        });
+        formularioP.add(jTextIdentificacionFederacion);
+
+        btn_actualizar.setText("Actualizar");
+        btn_actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actualizarActionPerformed(evt);
+            }
+        });
+        formularioP.add(btn_actualizar);
 
         jPanel1.add(formularioP, java.awt.BorderLayout.CENTER);
 
         jPanel4.setBackground(new java.awt.Color(102, 102, 255));
 
-        jLabel1.setText("Actualize un examen");
+        jLabel1.setText("Actualice un examen");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -105,7 +158,7 @@ public class ActualizarExamen extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(208, 208, 208)
                 .addComponent(jLabel1)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addContainerGap(360, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,13 +182,130 @@ public class ActualizarExamen extends javax.swing.JPanel {
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextIdentificacionFederacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdentificacionFederacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIdentificacionFederacionActionPerformed
+
+    private void jComboIndicadorPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboIndicadorPruebaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboIndicadorPruebaActionPerformed
+
+    private void btn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarActionPerformed
+        String error = "";
+        String cedula = cedulaExamen.getText();
+        if(cedula.isEmpty()){
+            error += "El campo cedula no puede estar vacio\n";
+        }
+        String fechaPresentacion = ((JTextField)jDateFechaPresentacion.getDateEditor().getUiComponent()).getText();        
+        if(fechaPresentacion.isEmpty()){
+            error += "El campo fecha de presentacion no puede estar vacio\n";
+        }
+        String escuela = escuelaExamen.getSelectedItem().toString();
+        if(escuela.equals("Seleccionar")){
+            error += "Debe seleccionar una escuela\n";
+        }
+        int puntajeCombate = 0;
+        try{
+            puntajeCombate = Integer.parseInt(jTextPuntajeCombate.getText());
+        } catch(Exception e){
+            error += "El campo puntaje de combate debe ser un numero entero\n";
+        }
+        int puntajeFiguras = 0;
+        try{
+            puntajeFiguras = Integer.parseInt(jTextPuntajeFiguras.getText());
+        } catch(Exception e){
+            error += "El campo puntaje de figuras debe ser un numero entero\n";
+        }
+        String nombreInstructor = jTextNombreInstructor.getText();
+        if(nombreInstructor.isEmpty()){
+            error += "El campo nombre del instructor no puede estar vacio\n";
+        }
+        String indicadorPrueba = jComboIndicadorPrueba.getSelectedItem().toString();
+        if(indicadorPrueba.equals("Seleccionar")){
+            error += "Debe seleccionar un indicador de la prueba\n";
+        }
+        String identificacion = jTextIdentificacionFederacion.getText();
+        if(identificacion.isEmpty()){
+            error += "El campo numero de identificacion de la federacion no puede estar vacio\n";
+        }
+        String paisFederacion = ""; //jTextPaisFederacion.getText()
+        if(paisFederacion.isEmpty()){
+            error += "El campo pais de la federacion no puede estar vacio\n";
+        }
+        Examen examen = new Examen(cedula, fechaPresentacion, escuela, puntajeCombate, puntajeFiguras, nombreInstructor, indicadorPrueba, paisFederacion, identificacion);
+        
+        if(!error.isEmpty()){
+            JOptionPane.showMessageDialog(null, error, "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        String query = "update EXAMENES set escuela = ?, puntaje_combate = ?, puntaje_figuras = ?, nombre_instructor = ?, indicador_prueba  = ?, pais_federacion = ? where cedula_practicante = ? and fecha_presentacion = ?";
+        try{
+            PreparedStatement ps = Principal.db.prepareStatement(query);
+            ps.setString(1, examen.getEscuela());
+            ps.setInt(2, examen.getPuntajeCombate());
+            ps.setInt(3, examen.getPuntajeFigura());
+            ps.setString(4, examen.getNombreInstructor());
+            ps.setString(5, examen.getIndicardorPrueba());
+            ps.setString(6, examen.getPaisFederacion());
+            ps.setString(7, examen.getCedula());
+            ps.setString(8, examen.getFechaPresentacion());
+            ps.executeUpdate();
+            System.out.println(ps);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btn_actualizarActionPerformed
+
+    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+        String error = "";
+        String cedula = cedulaExamen.getText();
+        String fechaPresentacion = ((JTextField)jDateFechaPresentacion.getDateEditor().getUiComponent()).getText();
+        
+        if(cedula.isEmpty()){
+            error += "La cedula no puede estar vacia";
+        }
+        if(fechaPresentacion.isEmpty()){
+            error += "La fecha de presentacion no puede estar vacia";
+        }
+        String query = "select *  from EXAMENES where cedula_practicante = ? and fecha_presentacion = ?";
+        try{
+            PreparedStatement ps = Principal.db.prepareStatement(query);
+            ps.setString(1, cedula);
+            ps.setString(2, fechaPresentacion);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                escuelaExamen.setSelectedItem(rs.getString("escuela"));
+                jTextPuntajeCombate.setText(rs.getString("puntaje_combate"));
+                jTextPuntajeFiguras.setText(rs.getString("puntaje_figuras"));
+                jTextNombreInstructor.setText(rs.getString("nombre_instructor"));
+                jComboIndicadorPrueba.setSelectedItem(rs.getString("indicador_prueba"));
+                //jTextPaisFederacion.setText(rs.getString("pais_federacion"));
+                jTextIdentificacionFederacion.setText(rs.getString("numero_identificacion_federacion"));
+                jTextIdentificacionFederacion.setEditable(false);
+            } else{
+                JOptionPane.showMessageDialog(null, "Examen no registrado", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        
+    }//GEN-LAST:event_btn_buscarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_actualizar;
+    private javax.swing.JButton btn_buscar;
     private javax.swing.JTextField cedulaExamen;
     private javax.swing.JComboBox<String> escuelaExamen;
-    private javax.swing.JTextField fechaExamen;
     private javax.swing.JPanel formularioP;
-    private javax.swing.JComboBox<String> indicadorPrueba;
+    private javax.swing.JComboBox<String> jComboIndicadorPrueba;
+    private com.toedter.calendar.JDateChooser jDateFechaPresentacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -145,12 +315,14 @@ public class ActualizarExamen extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField nombreInstructor;
-    private javax.swing.JTextField puntajeExamen;
-    private javax.swing.JTextField puntajeFigurasExamen;
+    private javax.swing.JTextField jTextIdentificacionFederacion;
+    private javax.swing.JTextField jTextNombreInstructor;
+    private javax.swing.JTextField jTextPuntajeCombate;
+    private javax.swing.JTextField jTextPuntajeFiguras;
     // End of variables declaration//GEN-END:variables
 }
