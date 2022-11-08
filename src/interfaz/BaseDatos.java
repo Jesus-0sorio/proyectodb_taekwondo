@@ -149,11 +149,11 @@ public class BaseDatos extends javax.swing.JPanel {
         String error = "";
         String nameDB = JTextnombreBD.getText();
         if(nameDB.isEmpty()){
-            error += "El campo nombre de la base de datos no puede estar vacio";
+            error += "El campo nombre de la base de datos no puede estar vacio\n";
         }
         String user = JTextusuario.getText();
         if(user.isEmpty()){
-            error += "El campo usuario no puede estar vacio";
+            error += "El campo usuario no puede estar vacio\n";
         }
         if(!error.isEmpty()){
             JOptionPane.showMessageDialog(null, error, "ERROR", JOptionPane.ERROR_MESSAGE);
