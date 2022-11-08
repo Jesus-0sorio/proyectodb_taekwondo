@@ -6,9 +6,6 @@ package interfaz;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -202,19 +199,28 @@ public class Principal extends javax.swing.JFrame {
         
         while(true){
             try{
-                Thread.sleep(5000);
-                if(estadoDB == "Desconectada" || estadoDB == null){
+                Thread.sleep(100);
+                if("Desconectada".equals(estadoDB) || estadoDB == null){
                 JLabelestado.setText("Desconectada");
                 JButtonestado.setBackground(Color.red);
+                btn_crearLiga.setEnabled(false);
+                btn_inscribirParticipante.setEnabled(false);
+                btn_actualizarExamen.setEnabled(false);
+                btn_consultar.setEnabled(false);
                 } else{
                 JLabelestado.setText("Conectada");
                 JButtonestado.setBackground(Color.green);
-                }  
-            }catch (InterruptedException ex) {
+                btn_crearLiga.setEnabled(true);
+                btn_inscribirParticipante.setEnabled(true);
+                btn_actualizarExamen.setEnabled(true);
+                btn_consultar.setEnabled(true);
+                }
+            }
+            catch (InterruptedException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
-            }
         }
+    }
     };
     
 /********************************BOTONES DEL MENU*****************************/
@@ -222,19 +228,6 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         Consultar consu = new Consultar();
         ShowPanel(consu);
-//        String query = "select * from prueba";
-//        try{
-//            PreparedStatement ps = db.prepareStatement(query);
-//            ResultSet rs = ps.executeQuery();
-//            System.out.println(rs);
-//            while(rs.next()){
-//                System.out.println(rs.getString("nombre"));
-//                System.out.println(rs.getString("numero"));
-//                System.out.println(rs.getString("fecha"));
-//            }
-//        } catch (SQLException ex) {
-//            System.out.println("error: " + ex.getMessage());
-//        }
     }//GEN-LAST:event_btn_consultarActionPerformed
 
     private void btn_inscribirParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inscribirParticipanteActionPerformed
@@ -331,4 +324,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel unEspacio;
     private javax.swing.JLabel unEspacio2;
     // End of variables declaration//GEN-END:variables
+
 }

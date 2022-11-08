@@ -9,8 +9,6 @@ import Modelo.Practicante;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -30,7 +28,6 @@ public class InscribirPracticante extends javax.swing.JPanel {
         ((JTextField) this.JDatefechanacimiento.getDateEditor()).setEditable(false);
         ((JTextField) this.JDatefechaingreso.getDateEditor()).setEditable(false);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -128,7 +125,7 @@ public class InscribirPracticante extends javax.swing.JPanel {
             }
         });
 
-        JComboBoxliga.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        JComboBoxliga.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
         JComboBoxliga.setToolTipText("");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -235,21 +232,45 @@ public class InscribirPracticante extends javax.swing.JPanel {
     }//GEN-LAST:event_JTextpesoActionPerformed
 
     private void btn_inscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inscribirActionPerformed
+        String error = "";
+        String liga = JComboBoxliga.getSelectedItem().toString();
+        if(liga.equals("Seleccionar")){
+            error += "Debe buscar y seleccionar una liga\n";
+        }
         String cedula = JTextcedula.getText();
+        if(cedula.isEmpty()){
+            error += "El campo cedula no puede estar vacio\n";
+        }
         String nombre = JTextnombre.getText();
+        if(nombre.isEmpty()){
+            error += "El campo nombre no puede estar vacio\n";
+        }
         String apellido = JTextapellido.getText();
+        if(apellido.isEmpty()){
+            error += "El campo apellido no puede estar vacio\n";
+        }
         String fechaNacimiento = ((JTextField)JDatefechanacimiento.getDateEditor().getUiComponent()).getText();
+        if(fechaNacimiento.isEmpty()){
+            error += "Debe ingresar una fecha de nacimiento\n";
+        }
         String fechaIngreso = ((JTextField)JDatefechaingreso.getDateEditor().getUiComponent()).getText();
+        if(fechaIngreso.isEmpty()){
+            error += "Debe ingresar una fecha de ingreso\n";
+        }
         String nacionalidad = JTextnacionalidad.getText();
+        if(nacionalidad.isEmpty()){
+            error += "El campo nacionalidad no puede estar vacio\n";
+        }
         float peso = 0;
         try {
             peso = Float.parseFloat(JTextpeso.getText());
-        } catch (Exception e){
-            JOptionPane.showMessageDialog(null, "El campo Peso debe ser un valor numerio", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } catch (NumberFormatException e){
+            error += "El campo peso debe ser un valor numerico\n";
+        }
+        if(!error.isEmpty()){
+            JOptionPane.showMessageDialog(null, error, "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-        String liga = JComboBoxliga.getSelectedItem().toString();
         String query = "insert into PRACTICANTE(numero_cedula, nombre, apellido, fecha_nacimiento, fecha_ingreso, nacionalidad, peso, personeria_juridica_liga) values (?,?,?,?,?,?,?,?)";
         Practicante practicante = new Practicante(cedula, nombre, apellido, fechaNacimiento, fechaIngreso, nacionalidad, peso, liga);
         try{
@@ -265,7 +286,7 @@ public class InscribirPracticante extends javax.swing.JPanel {
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Practicante inscrito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_inscribirActionPerformed
 
@@ -295,10 +316,10 @@ public class InscribirPracticante extends javax.swing.JPanel {
             }
             if(JComboBoxliga.getItemCount() == 0){
                 JOptionPane.showMessageDialog(null, "No se encontro ninguna liga", "ERROR", JOptionPane.ERROR_MESSAGE);
-                JComboBoxliga.addItem("Seleccione");
+                JComboBoxliga.addItem("Seleccionar");
             }
         } catch (SQLException ex) {
-            Logger.getLogger(InscribirPracticante.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_buscarLigaActionPerformed
 

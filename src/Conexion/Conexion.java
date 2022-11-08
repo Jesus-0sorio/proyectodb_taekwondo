@@ -8,6 +8,7 @@ package Conexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,10 +65,10 @@ public class Conexion {
             
             conexionDB = DriverManager.getConnection(sourceURL, usuario, contrasena);
             estadoDB = "Conectada";
-            System.out.println("Conexion Exitosa");
+            JOptionPane.showMessageDialog(null, "Conexion Exitosa", "Informacion", JOptionPane.INFORMATION_MESSAGE);
             return conexionDB;
         }catch (SQLException sqle){
-            System.out.println(sqle);
+            JOptionPane.showMessageDialog(null, sqle.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         return conexionDB;
     }
@@ -76,9 +77,9 @@ public class Conexion {
         try{     
             conexionDB.close();
             estadoDB = "Desconectada";
-            System.out.println("Conexion Terminada");
+            JOptionPane.showMessageDialog(null, "Conexion Terminada", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         }catch (SQLException sqle){
-            System.out.println(sqle);
+            JOptionPane.showMessageDialog(null, sqle.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
             conexionDB.close();
         } finally {
             conexionDB.close();

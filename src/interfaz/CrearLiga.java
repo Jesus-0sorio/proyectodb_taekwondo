@@ -295,10 +295,10 @@ public class CrearLiga extends javax.swing.JPanel {
         
         //Creacion de objeto liga y creacion de query para crear liga
         Liga liga = new Liga(personeriaJuridica, fechaAfiliacion, escuela, ciudadSede, identificacionFederacion);
-        String queryLiga = "insert into LIGA(personeria_juridica,  fecha_afiliacion, escuela, ciudad_sede, numero_identificacion_federacion) values (?,?,?,?,?)";
+        String queryLiga = "insert into LIGA(personeria_juridica,  fecha_afiliacion, escuela, ciudad_sede, numero_identificacion_federacion, numero_cedula_director) values (?,?,?,?,?,?)";
         //Creacion de objeto director y creacion de query para crear director
         Director director = new Director(cedulaDirector, nombreDirector, gradoDirector, danDirector);
-        String queryDirector = "insert into DIRECTOR(cedula, nombre, grado, numero_dan, personeria_juridica_liga) values (?,?,?,?,?)";
+        String queryDirector = "insert into DIRECTOR(cedula, nombre, grado, numero_dan) values (?,?,?,?)";
         try{
             //Ingreso de datos para crear liga en la DB
             PreparedStatement psLiga = Principal.db.prepareStatement(queryLiga);
@@ -306,7 +306,8 @@ public class CrearLiga extends javax.swing.JPanel {
             psLiga.setString(2, liga.getFechaAfiliacion());
             psLiga.setString(3, liga.getEscuela());
             psLiga.setString(4, liga.getCiudadSede());
-            psLiga.setString(5, liga.getPersoneriaJuridica());
+            psLiga.setString(5, liga.getIdentificacionFederacion());
+            psLiga.setString(6, director.getCedula());
             psLiga.executeUpdate();
             //Ingreso de datos para crear director en la DB
             PreparedStatement psDirector = Principal.db.prepareStatement(queryDirector);
@@ -319,11 +320,10 @@ public class CrearLiga extends javax.swing.JPanel {
             else{
                 psDirector.setString(4, null);
             }
-            psDirector.setString(5, liga.getIdentificacionFederacion());
             psDirector.executeUpdate();
             JOptionPane.showMessageDialog(null, "Liga creada", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException sqle){
-            System.out.println(sqle);
+            JOptionPane.showMessageDialog(null, sqle.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_btn_crearActionPerformed

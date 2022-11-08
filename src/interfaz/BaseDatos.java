@@ -7,6 +7,7 @@ package interfaz;
 
 import Conexion.Conexion;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -145,13 +146,23 @@ public class BaseDatos extends javax.swing.JPanel {
     }//GEN-LAST:event_JTextusuarioActionPerformed
 
     private void btn_conectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_conectarActionPerformed
+        String error = "";
         String nameDB = JTextnombreBD.getText();
+        if(nameDB.isEmpty()){
+            error += "El campo nombre de la base de datos no puede estar vacio";
+        }
         String user = JTextusuario.getText();
+        if(user.isEmpty()){
+            error += "El campo usuario no puede estar vacio";
+        }
+        if(!error.isEmpty()){
+            JOptionPane.showMessageDialog(null, error, "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String pwd =  new String(JTextpwd.getPassword());
         db_connect = new Conexion(user,pwd,nameDB);
         Principal.db = db_connect.conectar();
         Principal.estadoDB = db_connect.getEstadoDB();
-        System.out.println(Principal.estadoDB);
     }//GEN-LAST:event_btn_conectarActionPerformed
 
     private void btn_desconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_desconectarActionPerformed
@@ -159,7 +170,7 @@ public class BaseDatos extends javax.swing.JPanel {
             db_connect.desconectar();
             Principal.estadoDB = db_connect.getEstadoDB();
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_desconectarActionPerformed
 
