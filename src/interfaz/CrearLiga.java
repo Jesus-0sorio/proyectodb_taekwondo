@@ -58,14 +58,19 @@ public class CrearLiga extends javax.swing.JPanel {
         check_no = new javax.swing.JCheckBox();
         JCombodan = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        JTextidentificacionfederacion = new javax.swing.JTextField();
         btn_crear = new javax.swing.JButton();
+        JTextidentificacionfederacion = new javax.swing.JTextField();
         titulo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -73,29 +78,23 @@ public class CrearLiga extends javax.swing.JPanel {
 
         formulario.setBackground(new java.awt.Color(0, 0, 0));
         formulario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        formulario.setLayout(new java.awt.GridLayout(10, 2));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Personeria Juridica");
-        formulario.add(jLabel2);
 
         JTextpersoneriajuridica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextpersoneriajuridicaActionPerformed(evt);
             }
         });
-        formulario.add(JTextpersoneriajuridica);
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Fecha de Afiliación");
-        formulario.add(jLabel3);
 
         JDatefechaafiliacion.setDateFormatString("yyyy/MM/d");
-        formulario.add(JDatefechaafiliacion);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Escuela");
-        formulario.add(jLabel4);
 
         JComboescuela.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "WTF", "ITF" }));
         JComboescuela.addActionListener(new java.awt.event.ActionListener() {
@@ -103,35 +102,26 @@ public class CrearLiga extends javax.swing.JPanel {
                 JComboescuelaActionPerformed(evt);
             }
         });
-        formulario.add(JComboescuela);
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ciudad de Sede");
-        formulario.add(jLabel5);
-        formulario.add(JTextciudadsede);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Cedula del Director");
-        formulario.add(jLabel6);
-        formulario.add(JTextcedula);
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nombre del Director");
-        formulario.add(jLabel7);
 
         JTextnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextnombreActionPerformed(evt);
             }
         });
-        formulario.add(JTextnombre);
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Grado del Director");
-        formulario.add(jLabel8);
 
         JCombogrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Blanco", "Amarillo", "Verde", "Azul", "Rojo", "Negro" }));
-        formulario.add(JCombogrado);
 
         panelDAN.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -153,11 +143,11 @@ public class CrearLiga extends javax.swing.JPanel {
         panelDANLayout.setHorizontalGroup(
             panelDANLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDANLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(17, 17, 17)
                 .addComponent(check_si)
                 .addGap(18, 18, 18)
                 .addComponent(check_no)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelDANLayout.createSequentialGroup()
                 .addComponent(jLabel9)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -165,22 +155,17 @@ public class CrearLiga extends javax.swing.JPanel {
         panelDANLayout.setVerticalGroup(
             panelDANLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDANLayout.createSequentialGroup()
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelDANLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(check_si)
                     .addComponent(check_no)))
         );
 
-        formulario.add(panelDAN);
-
         JCombodan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-        formulario.add(JCombodan);
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Identificación de la federación");
-        formulario.add(jLabel13);
-        formulario.add(JTextidentificacionfederacion);
 
         btn_crear.setText("Crear");
         btn_crear.setToolTipText("");
@@ -191,37 +176,118 @@ public class CrearLiga extends javax.swing.JPanel {
                 btn_crearActionPerformed(evt);
             }
         });
-        formulario.add(btn_crear);
+
+        javax.swing.GroupLayout formularioLayout = new javax.swing.GroupLayout(formulario);
+        formulario.setLayout(formularioLayout);
+        formularioLayout.setHorizontalGroup(
+            formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formularioLayout.createSequentialGroup()
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formularioLayout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(btn_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(formularioLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(panelDAN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel13))
+                        .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(formularioLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(JDatefechaafiliacion, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                                    .addComponent(JTextpersoneriajuridica, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                                    .addComponent(JComboescuela, 0, 210, Short.MAX_VALUE)
+                                    .addComponent(JTextciudadsede, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                                    .addComponent(JTextcedula, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                                    .addComponent(JTextnombre, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                                    .addComponent(JCombogrado, 0, 210, Short.MAX_VALUE)
+                                    .addComponent(JCombodan, 0, 210, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formularioLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(JTextidentificacionfederacion, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        formularioLayout.setVerticalGroup(
+            formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formularioLayout.createSequentialGroup()
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextpersoneriajuridica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JDatefechaafiliacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JComboescuela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTextciudadsede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTextcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTextnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JCombogrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelDAN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JCombodan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(JTextidentificacionfederacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addComponent(btn_crear)
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
 
         jPanel1.add(formulario, java.awt.BorderLayout.CENTER);
 
         titulo.setBackground(new java.awt.Color(153, 153, 0));
+        titulo.setLayout(new java.awt.BorderLayout());
 
+        jLabel1.setFont(new java.awt.Font("Impact", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Crear liga");
+        titulo.add(jLabel1, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout tituloLayout = new javax.swing.GroupLayout(titulo);
-        titulo.setLayout(tituloLayout);
-        tituloLayout.setHorizontalGroup(
-            tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tituloLayout.createSequentialGroup()
-                .addGap(240, 240, 240)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(258, Short.MAX_VALUE))
-        );
-        tituloLayout.setVerticalGroup(
-            tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tituloLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
+        jLabel14.setText("          ");
+        titulo.add(jLabel14, java.awt.BorderLayout.LINE_END);
+
+        jLabel15.setText("          ");
+        titulo.add(jLabel15, java.awt.BorderLayout.LINE_START);
+
+        jLabel16.setText(" ");
+        titulo.add(jLabel16, java.awt.BorderLayout.PAGE_START);
+
+        jLabel17.setText(" ");
+        titulo.add(jLabel17, java.awt.BorderLayout.PAGE_END);
 
         jPanel1.add(titulo, java.awt.BorderLayout.PAGE_START);
 
-        jLabel10.setText("                         ");
+        jLabel10.setText("          ");
         jPanel1.add(jLabel10, java.awt.BorderLayout.LINE_END);
 
-        jLabel11.setText("                         ");
+        jLabel11.setText("          ");
         jPanel1.add(jLabel11, java.awt.BorderLayout.LINE_START);
 
         jLabel12.setText(" ");
@@ -241,10 +307,13 @@ public class CrearLiga extends javax.swing.JPanel {
     private void btn_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearActionPerformed
         String error = "";
         //Declaracion de variables liga
-        String personeriaJuridica = JTextpersoneriajuridica.getText();
-        if(personeriaJuridica.isEmpty()){
-            error += "El campo personeria juridica no puede estar vacio\n";
+        int personeriaJuridica = 0;
+        try{
+            personeriaJuridica = Integer.parseInt(JTextpersoneriajuridica.getText());
+        } catch(NumberFormatException e){
+            error += "El campo personeria juridica debe ser un numero entero y menor a 2147483647\n";
         }
+        
         String fechaAfiliacion = ((JTextField)JDatefechaafiliacion.getDateEditor().getUiComponent()).getText();
         if(fechaAfiliacion.isEmpty()){
             error += "Debe ingresar la fecha de afiliacion\n";
@@ -295,21 +364,20 @@ public class CrearLiga extends javax.swing.JPanel {
         
         //Creacion de objeto liga y creacion de query para crear liga
         Liga liga = new Liga(personeriaJuridica, fechaAfiliacion, escuela, ciudadSede, identificacionFederacion);
-        String queryLiga = "insert into LIGA(personeria_juridica,  fecha_afiliacion, escuela, ciudad_sede, numero_identificacion_federacion, numero_cedula_director) values (?,?,?,?,?,?)";
+        String queryLiga = "insert into LIGAS(personeria_juridica,  fecha_afiliacion, escuela, ciudad_sede, numero_identificacion_federacion, numero_cedula_director) values (?,?,?,?,?,?)";
         //Creacion de objeto director y creacion de query para crear director
         Director director = new Director(cedulaDirector, nombreDirector, gradoDirector, danDirector);
-        String queryDirector = "insert into DIRECTOR(cedula, nombre, grado, numero_dan) values (?,?,?,?)";
+        String queryDirector = "insert into DIRECTORES_DE_LIGAS(cedula, nombre, grado, numero_dan) values (?,?,?,?)";
         try{
+            //Ingreso de datos para crear director en la DB
+            
             //Ingreso de datos para crear liga en la DB
             PreparedStatement psLiga = Principal.db.prepareStatement(queryLiga);
-            psLiga.setString(1, liga.getPersoneriaJuridica());
+            psLiga.setInt(1, liga.getPersoneriaJuridica());
             psLiga.setString(2, liga.getFechaAfiliacion());
             psLiga.setString(3, liga.getEscuela());
             psLiga.setString(4, liga.getCiudadSede());
             psLiga.setString(5, liga.getIdentificacionFederacion());
-            psLiga.setString(6, director.getCedula());
-            psLiga.executeUpdate();
-            //Ingreso de datos para crear director en la DB
             PreparedStatement psDirector = Principal.db.prepareStatement(queryDirector);
             psDirector.setString(1, director.getCedula());
             psDirector.setString(2, director.getNombre());
@@ -321,11 +389,13 @@ public class CrearLiga extends javax.swing.JPanel {
                 psDirector.setString(4, null);
             }
             psDirector.executeUpdate();
+            psLiga.setString(6, director.getCedula());
+            psLiga.executeUpdate();
+            
             JOptionPane.showMessageDialog(null, "Liga creada", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException sqle){
             JOptionPane.showMessageDialog(null, sqle.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        
     }//GEN-LAST:event_btn_crearActionPerformed
 
     private void JComboescuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JComboescuelaActionPerformed
@@ -352,6 +422,10 @@ public class CrearLiga extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

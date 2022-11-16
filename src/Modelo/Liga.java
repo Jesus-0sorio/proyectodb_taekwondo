@@ -11,13 +11,13 @@ package Modelo;
  * @author @jesus.osorio
  */
 public class Liga {
-    protected String personeriaJuridica;
+    protected int personeriaJuridica;
     protected String fechaAfiliacion;
     protected String escuela;
     protected String ciudadSede;
     protected String identificacionFederacion;
 
-    public Liga(String personeriaJuridica, String fechaAfiliacion, String escuela, String ciudadSede, String identificacionFederacion) {
+    public Liga(int personeriaJuridica, String fechaAfiliacion, String escuela, String ciudadSede, String identificacionFederacion) {
         this.personeriaJuridica = personeriaJuridica;
         this.fechaAfiliacion = fechaAfiliacion;
         this.escuela = escuela;
@@ -25,11 +25,11 @@ public class Liga {
         this.identificacionFederacion = identificacionFederacion;
     }
 
-    public String getPersoneriaJuridica() {
+    public int getPersoneriaJuridica() {
         return personeriaJuridica;
     }
 
-    public void setPersoneriaJuridica(String personeriaJuridica) {
+    public void setPersoneriaJuridica(int personeriaJuridica) {
         this.personeriaJuridica = personeriaJuridica;
     }
 
@@ -64,5 +64,7 @@ public class Liga {
     public void setIdentificacionFederacion(String identificacionFederacion) {
         this.identificacionFederacion = identificacionFederacion;
     }
+
+    
     
 }

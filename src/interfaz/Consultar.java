@@ -5,6 +5,11 @@
  */
 package interfaz;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ether
@@ -30,6 +35,10 @@ public class Consultar extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -41,37 +50,37 @@ public class Consultar extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(0, 0, 0));
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel2.setLayout(new java.awt.BorderLayout());
 
+        jLabel5.setFont(new java.awt.Font("Impact", 1, 36)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Consultar");
+        jPanel2.add(jLabel5, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(268, 268, 268)
-                .addComponent(jLabel5)
-                .addContainerGap(282, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
+        jLabel6.setText("          ");
+        jPanel2.add(jLabel6, java.awt.BorderLayout.LINE_END);
+
+        jLabel7.setText(" ");
+        jPanel2.add(jLabel7, java.awt.BorderLayout.PAGE_START);
+
+        jLabel8.setText("          ");
+        jPanel2.add(jLabel8, java.awt.BorderLayout.LINE_START);
+
+        jLabel9.setText(" ");
+        jPanel2.add(jLabel9, java.awt.BorderLayout.PAGE_END);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
-        jLabel1.setText("                         ");
+        jLabel1.setText("          ");
         jPanel1.add(jLabel1, java.awt.BorderLayout.LINE_START);
 
-        jLabel2.setText("                         ");
+        jLabel2.setText("          ");
         jPanel1.add(jLabel2, java.awt.BorderLayout.LINE_END);
 
         jLabel3.setText(" ");
@@ -82,6 +91,11 @@ public class Consultar extends javax.swing.JPanel {
         formulario.setForeground(new java.awt.Color(255, 255, 255));
 
         btn_buscar.setText("Buscar");
+        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscarActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -96,23 +110,18 @@ public class Consultar extends javax.swing.JPanel {
         formulario.setLayout(formularioLayout);
         formularioLayout.setHorizontalGroup(
             formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
             .addGroup(formularioLayout.createSequentialGroup()
                 .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formularioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
                     .addGroup(formularioLayout.createSequentialGroup()
-                        .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(formularioLayout.createSequentialGroup()
-                                .addGap(192, 192, 192)
-                                .addComponent(btn_buscar))
-                            .addGroup(formularioLayout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel4)
-                                .addGap(95, 95, 95)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 51, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel4)
+                        .addGap(95, 95, 95)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(formularioLayout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(btn_buscar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         formularioLayout.setVerticalGroup(
             formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,10 +131,10 @@ public class Consultar extends javax.swing.JPanel {
                     .addComponent(jLabel4)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_buscar)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(formulario, java.awt.BorderLayout.CENTER);
@@ -142,6 +151,103 @@ public class Consultar extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+        String opc = jComboBox1.getSelectedItem().toString();
+        
+        if(opc.equals("Consulta 1")){
+            String res = "Nombre practicanten\tCombates Promedio\n";
+            String query = "select practicantes.nombre,AVG(examenes.puntaje_combate) \n" +
+            "from practicantes,examenes \n" +
+            "where practicantes.numero_de_cedula = examenes.cedula_practicante\n" +
+            "AND practicantes.personeria_juridica_liga = \"31244123\"\n" +
+            "GROUP BY practicantes.numero_de_cedula";
+            try{
+                PreparedStatement ps = Principal.db.prepareStatement(query);
+                
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                res += rs.getString("practicantes.nombre")+"\t\t"+rs.getString("AVG(examenes.puntaje_combate)")+"\n";
+      
+            } 
+            jTextArea1.setText(res);
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        } else if(opc.equals("Consulta 2")){
+            String res = "Personeria Juridcia\tNumero de practicantes\tEscuela\n";
+            String query = "select ligas.personeria_juridica, count(practicantes.numero_de_cedula), ligas. escuela\n" +
+            "from ligas, practicantes\n" +
+            "where  practicantes.personeria_juridica_liga = ligas.personeria_juridica\n" +
+            "AND ligas.numero_identificacion_federacion\n" +
+            "GROUP BY ligas.personeria_juridica";
+            try{
+                PreparedStatement ps = Principal.db.prepareStatement(query);
+                
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                res += rs.getString("ligas.personeria_juridica")+"\t\t"+rs.getString("count(practicantes.numero_de_cedula)")+"\t\t"+rs.getString("ligas.escuela")+"\n";
+      
+            } 
+            jTextArea1.setText(res);
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        } else if(opc.equals("Consulta 3")){
+            String res = "\tResoluncion colegio\tIntervencion\n";
+            String query = "select  colegios.resolucion_funcionamiento,\n" +
+            "COUNT(intervenciones.nombre_competicion + intervenciones.fecha_inicio_competicion + intervenciones.resolucion_funcionamiento_colegio)\n" +
+            "from colegios, intervenciones,competiciones\n" +
+            "where intervenciones.nombre_competicion = competiciones.nombre \n" +
+            "AND intervenciones.fecha_inicio_competicion = competiciones.fecha_inicio\n" +
+            "GROUP BY colegios.resolucion_funcionamiento";
+            try{
+                PreparedStatement ps = Principal.db.prepareStatement(query);
+                ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                res += rs.getString("colegios.resolucion_funcionamiento")+"\t\t\t"+rs.getString("COUNT(intervenciones.nombre_competicion + intervenciones.fecha_inicio_competicion + intervenciones.resolucion_funcionamiento_colegio)")+"\n";
+      
+            } 
+            jTextArea1.setText(res);
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        } else if(opc.equals("Consulta 4")){
+            String res = "Dictores de ligas\tCiudad sede\n";
+            String query = "select directores_de_ligas.nombre, ligas.ciudad_sede\n" +
+            "from federaciones, ligas, directores_de_ligas\n" +
+            "where directores_de_ligas.cedula = ligas.numero_cedula_director\n" +
+            "AND ligas.numero_identificacion_federacion = \"324234555\"\n" +
+            "GROUP BY directores_de_ligas.nombre";
+            try{
+                PreparedStatement ps = Principal.db.prepareStatement(query);
+                ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                res += rs.getString("directores_de_ligas.nombre")+"\t\t"+rs.getString("ligas.ciudad_sede")+"\n";
+      
+            } 
+            jTextArea1.setText(res);
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        }  else if(opc.equals("Consulta 5")){
+            String res = "Nombre\n";
+            String query = "select CONCAT(competiciones.nombre,' ' ,\"del\",' ',competiciones.fecha_inicio) as nombre\n" +
+            "from competiciones inner join ligas\n" +
+            "on ligas.numero_identificacion_federacion = competiciones.numero_identificacion_federacion group by fecha_inicio;";
+            try{
+                PreparedStatement ps = Principal.db.prepareStatement(query);
+                ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                res += rs.getString("nombre")+"\n";
+      
+            } 
+            jTextArea1.setText(res);
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btn_buscarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_buscar;
@@ -152,6 +258,10 @@ public class Consultar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

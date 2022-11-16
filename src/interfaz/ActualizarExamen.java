@@ -68,10 +68,15 @@ public class ActualizarExamen extends javax.swing.JPanel {
         jTextPaisFederacion = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -242,10 +247,11 @@ public class ActualizarExamen extends javax.swing.JPanel {
                     .addGroup(panel_formuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(btn_actualizar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panel_formuLayout.createSequentialGroup()
+                            .addContainerGap()
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextIdentificacionFederacion, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_formuLayout.setVerticalGroup(
             panel_formuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,9 +294,9 @@ public class ActualizarExamen extends javax.swing.JPanel {
                     .addComponent(jLabel11)
                     .addComponent(jTextPaisFederacion, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panel_formuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextIdentificacionFederacion, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panel_formuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextIdentificacionFederacion, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_actualizar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -299,25 +305,25 @@ public class ActualizarExamen extends javax.swing.JPanel {
         jPanel1.add(panel_formu, java.awt.BorderLayout.CENTER);
 
         jPanel4.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel4.setLayout(new java.awt.BorderLayout());
 
+        jLabel1.setFont(new java.awt.Font("Impact", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Actualice un examen");
+        jPanel4.add(jLabel1, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(208, 208, 208)
-                .addComponent(jLabel1)
-                .addContainerGap(204, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+        jLabel12.setText("          ");
+        jPanel4.add(jLabel12, java.awt.BorderLayout.LINE_END);
+
+        jLabel18.setText(" ");
+        jPanel4.add(jLabel18, java.awt.BorderLayout.PAGE_START);
+
+        jLabel19.setText("          ");
+        jPanel4.add(jLabel19, java.awt.BorderLayout.LINE_START);
+
+        jLabel20.setText(" ");
+        jPanel4.add(jLabel20, java.awt.BorderLayout.PAGE_END);
 
         jPanel1.add(jPanel4, java.awt.BorderLayout.PAGE_START);
 
@@ -371,7 +377,7 @@ public class ActualizarExamen extends javax.swing.JPanel {
                 return;
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex, "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, e, "ERROR", JOptionPane.ERROR_MESSAGE);
         }
@@ -446,10 +452,6 @@ public class ActualizarExamen extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btn_actualizarActionPerformed
 
-    private void jTextIdentificacionFederacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdentificacionFederacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextIdentificacionFederacionActionPerformed
-
     private void jComboIndicadorPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboIndicadorPruebaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboIndicadorPruebaActionPerformed
@@ -457,6 +459,10 @@ public class ActualizarExamen extends javax.swing.JPanel {
     private void jTextNombreInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNombreInstructorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextNombreInstructorActionPerformed
+
+    private void jTextIdentificacionFederacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdentificacionFederacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIdentificacionFederacionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -470,12 +476,16 @@ public class ActualizarExamen extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

@@ -22,6 +22,7 @@ public class BaseDatos extends javax.swing.JPanel {
     private static Conexion db_connect = null;
     public BaseDatos() {
         initComponents();
+        JTextnombreBD.setText("TaekwondoParticipantes");
     }
 
     /**
@@ -36,6 +37,10 @@ public class BaseDatos extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -51,74 +56,67 @@ public class BaseDatos extends javax.swing.JPanel {
         btn_conectar = new javax.swing.JButton();
         btn_desconectar = new javax.swing.JButton();
 
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         setLayout(new java.awt.BorderLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
+        jLabel1.setFont(new java.awt.Font("Impact", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Base de datos");
+        jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(jLabel1)
-                .addContainerGap(333, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
+        jLabel8.setText("          ");
+        jPanel1.add(jLabel8, java.awt.BorderLayout.LINE_END);
+
+        jLabel9.setText("         ");
+        jPanel1.add(jLabel9, java.awt.BorderLayout.LINE_START);
+
+        jLabel10.setText(" ");
+        jPanel1.add(jLabel10, java.awt.BorderLayout.PAGE_START);
+
+        jLabel11.setText(" ");
+        jPanel1.add(jLabel11, java.awt.BorderLayout.PAGE_END);
 
         jPanel2.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
-        jLabel2.setText("                         ");
+        jLabel2.setText("          ");
         jPanel2.add(jLabel2, java.awt.BorderLayout.LINE_END);
 
         jLabel3.setText(" ");
         jPanel2.add(jLabel3, java.awt.BorderLayout.PAGE_END);
 
-        jLabel4.setText("                         ");
+        jLabel4.setText("          ");
         jPanel2.add(jLabel4, java.awt.BorderLayout.LINE_START);
 
         formularioBD.setBackground(new java.awt.Color(0, 0, 0));
-        formularioBD.setLayout(new java.awt.GridLayout(6, 2));
-        formularioBD.add(filler1);
-        formularioBD.add(filler2);
+        formularioBD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Nombre de la base de datos");
-        formularioBD.add(jLabel5);
 
         JTextnombreBD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextnombreBDActionPerformed(evt);
             }
         });
-        formularioBD.add(JTextnombreBD);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Usuario");
-        formularioBD.add(jLabel6);
 
         JTextusuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextusuarioActionPerformed(evt);
             }
         });
-        formularioBD.add(JTextusuario);
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Contraseña");
-        formularioBD.add(jLabel7);
-        formularioBD.add(JTextpwd);
 
         btn_conectar.setText("Conectar");
         btn_conectar.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +124,6 @@ public class BaseDatos extends javax.swing.JPanel {
                 btn_conectarActionPerformed(evt);
             }
         });
-        formularioBD.add(btn_conectar);
 
         btn_desconectar.setText("Desconectar");
         btn_desconectar.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +131,61 @@ public class BaseDatos extends javax.swing.JPanel {
                 btn_desconectarActionPerformed(evt);
             }
         });
-        formularioBD.add(btn_desconectar);
+
+        javax.swing.GroupLayout formularioBDLayout = new javax.swing.GroupLayout(formularioBD);
+        formularioBD.setLayout(formularioBDLayout);
+        formularioBDLayout.setHorizontalGroup(
+            formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formularioBDLayout.createSequentialGroup()
+                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(formularioBDLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formularioBDLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JTextnombreBD, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(formularioBDLayout.createSequentialGroup()
+                        .addGroup(formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(98, 98, 98)
+                        .addGroup(formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTextusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTextpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+            .addGroup(formularioBDLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(btn_conectar, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(btn_desconectar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        formularioBDLayout.setVerticalGroup(
+            formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formularioBDLayout.createSequentialGroup()
+                .addGap(2, 2, 2)
+                .addGroup(formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(filler2, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(filler1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextnombreBD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTextusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextpwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(formularioBDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_conectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_desconectar))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
 
         jPanel2.add(formularioBD, java.awt.BorderLayout.CENTER);
 
@@ -189,12 +240,16 @@ public class BaseDatos extends javax.swing.JPanel {
     private javax.swing.Box.Filler filler2;
     private javax.swing.JPanel formularioBD;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
